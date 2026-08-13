@@ -68,7 +68,7 @@ El material vive en un **repositorio plantilla** mío. Tú **sacas tu propia cop
 > [!info] 🎓 Qué acaba de pasar
 > Ese repositorio **ya no es mío: es tuyo.** Tiene su propio historial y puedes escribir, romper y subir sin pedirle permiso a nadie.
 >
-> Es exactamente lo que hiciste en la **Fase 0.4** con Boochan. Todos los repos del curso son plantilla.
+> Es exactamente lo que hiciste en la **Bloque 0 · Fase 0.4.a** con Boochan. Todos los repos del curso son plantilla.
 
 ### **3B · Clónalo en tu bóveda**
 
