@@ -29,7 +29,7 @@ Y existe por una razón muy concreta.
 
 ## El escenario y los personajes
 
-Los mismos del [curso de Git](../curso-git-template/README.md):
+Los mismos del [curso de Git](../02_Curso_Git/README.md):
 
 - **Marko** — 19 años, recién titulado en SMR. Técnico junior en **Boochan Networks S.L.** Ya documenta con Git; ahora le toca aprender la terminal, porque en un servidor no hay ratón.
 - **Boochan Networks S.L.** — PYME ficticia de 12 empleados que da soporte de infraestructura. Tiene un servidor con Active Directory, VPN y almacenamiento por departamentos.
