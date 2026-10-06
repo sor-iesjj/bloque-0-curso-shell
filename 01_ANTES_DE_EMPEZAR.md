@@ -4,8 +4,6 @@
 >
 > **📍 Cuándo se lee:** **AHORA.** Antes de la Fase 0 y antes de encender ninguna máquina.
 >
-> **⏱️ Te lleva:** unos 15 minutos.
-
 ---
 
 > [!danger] 🛑 No abras la Fase 0 sin haber hecho esto
@@ -37,7 +35,7 @@ Este curso **no empieza de cero**. Das por hecho que ya tienes:
 
 | Lugar | Qué haces ahí | Qué no haces ahí |
 | :--- | :--- | :--- |
-| Tu ordenador · `Boveda_SOR/01_Practicas/B0_Curso_Shell/` | Lees los enunciados. | Ejecutar los comandos que modifican usuarios, permisos, discos o servicios. |
+| Tu ordenador · `Boveda_SOR/01_Practicas/B0_Curso_Shell/` | Abres los enunciados descargados **en Obsidian**. | Ejecutar los comandos que modifican usuarios, permisos, discos o servicios. |
 | VM `ShellLab` a través de SSH | Ejecutas los comandos Linux y creas los archivos de prueba. | Abrir o modificar `Boveda_SOR`. |
 | Tu ordenador · `Boveda_SOR/00_Apuntes/Trimestre_1/B0_Curso_Shell/` | Escribes tu entrada y guardas una **copia revisada** de los archivos que haya que entregar. | Romper cosas para ver qué pasa. |
 
@@ -71,7 +69,7 @@ El material vive en un **repositorio plantilla** mío. Tú **sacas tu propia cop
 
 ### **3A · Saca tu copia en GitHub**
 
-1. Abre el repositorio del curso: **`github.com/sor-iesjj/bloque-0-curso-shell`**
+1. En el navegador, abre el repositorio del curso: **`https://github.com/sor-iesjj/bloque-0-curso-shell`**. Aquí obtienes tu copia; después leerás el curso descargado en Obsidian.
 2. Pulsa el botón verde **`Use this template`** → **`Create a new repository`**
 3. **Repository name:** `bloque-0-curso-shell` *(déjalo igual)*
 4. Ponlo **público** o **privado**, como prefieras
@@ -126,6 +124,15 @@ ls
 
 - **✅ Bien:** el `ls` te muestra `00_INDICE.md`, `01_ANTES_DE_EMPEZAR.md`, `02_ENTREGABLES.md`, la carpeta `fase-0-preparar-laboratorio` y las siete carpetas siguientes.
 - **❌ Mal:** *"Permission denied (publickey)"* → tu SSH no está configurado. Vuelve a la **Fase 0.2.2**.
+
+### **3C · Abre el curso descargado en Obsidian**
+
+1. Abre Obsidian y selecciona tu bóveda **`Boveda_SOR`**. Si aún no aparece, usa **«Abrir carpeta como bóveda»** y elige la carpeta `Boveda_SOR` completa.
+2. En el explorador de archivos de Obsidian, abre `01_Practicas`, después `B0_Curso_Shell` y después `00_INDICE.md`. Esta es la **copia local** que acabas de clonar.
+3. En ese índice, abre **«Antes de empezar»** y comprueba que estás leyendo la misma guía dentro de Obsidian. Vuelve al índice para seguir el orden indicado: «Entregables» y luego «Fase 0».
+4. Comprueba que junto al índice ves `02_ENTREGABLES.md` y la carpeta `fase-0-preparar-laboratorio`. Si faltan, vuelve al Paso 3B y revisa la ruta del clon antes de continuar.
+
+Desde este punto, lee el material del curso **en Obsidian**. GitHub se ha usado para obtener tu copia y se usará al comprobar las entregas; los PDF que facilite el profesor pueden servirte como apoyo.
 
 ---
 
@@ -201,7 +208,7 @@ git push
 A partir de ahora, en cada ejercicio:
 
 ```
-1. Abres el ejercicio en   01_Practicas/B0_Curso_Shell/fase-N-…/EJ-….md
+1. En Obsidian abres el ejercicio en   01_Practicas/B0_Curso_Shell/fase-N-…/EJ-….md
 2. Abres tu entrada en     00_Apuntes/Trimestre_1/B0_Curso_Shell/shell-….md
    (el nombre te lo da el propio ejercicio, en su Paso 0)
 3. Arrancas ShellLab, abres Git Bash, conectas por SSH y compruebas `whoami` y `hostname`
@@ -221,6 +228,7 @@ A partir de ahora, en cada ejercicio:
 
 - [ ] Tengo mi copia del curso en GitHub *(botón `Use this template`)*.
 - [ ] La he clonado en `01_Practicas/B0_Curso_Shell/` y el `ls` muestra la Fase 0 y las siete fases siguientes.
+- [ ] He abierto en Obsidian `Boveda_SOR/01_Practicas/B0_Curso_Shell/00_INDICE.md` desde la copia descargada.
 - [ ] He creado `00_Apuntes/Trimestre_1/B0_Curso_Shell/`.
 - [ ] `git status` me responde desde `Trimestre_1` *(estoy dentro del repo)*.
 - [ ] **He hecho la prueba completa**: fichero → `add` → `commit` → `push` → **lo he visto en GitHub**.

@@ -75,7 +75,7 @@ Los **retos N5** son la parte que de verdad evalúa: no traen pasos numerados, t
 > Ahí tienes el mapa completo: la Fase 0, las siete fases de ejercicios y cómo funciona cada entrega.
 >
 > Sigue este orden:
-> 1. **[🛠️ Antes de empezar](01_ANTES_DE_EMPEZAR.md)** — traer el curso a tu ordenador y dejar listo dónde guardas todo. **15 minutos.**
+> 1. **[🛠️ Antes de empezar](01_ANTES_DE_EMPEZAR.md)** — traer el curso a `Boveda_SOR/01_Practicas/B0_Curso_Shell/`, abrirlo en Obsidian y dejar listo dónde guardas todo.
 > 2. **[📦 Entregables](02_ENTREGABLES.md)** — qué se entrega, cómo se llama y cómo se sube. **5 minutos.**
 > 3. **[Fase 0 · Prepara el laboratorio](fase-0-preparar-laboratorio/README.md)** — ISO, VirtualBox, Ubuntu Server, SSH e instantánea; se evalúa y se entrega.
 > 4. [Fase 1](fase-1-terminal-y-ficheros/README.md) — empieza con la VM ya operativa.

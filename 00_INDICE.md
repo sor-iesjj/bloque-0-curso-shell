@@ -23,7 +23,7 @@ Este curso te enseña esos comandos **antes** de que los necesites, para que cua
 
 | # | Qué | Dónde está explicado |
 | :--- | :--- | :--- |
-| **1** | **Prepara tu sitio de trabajo:** descarga este curso y deja listo dónde vas a guardar todo | **[🛠️ Antes de empezar](01_ANTES_DE_EMPEZAR.md)** |
+| **1** | **Prepara tu sitio de trabajo:** descarga este curso dentro de `Boveda_SOR/01_Practicas/`, ábrelo en Obsidian y deja listo dónde guardarás los apuntes | **[🛠️ Antes de empezar](01_ANTES_DE_EMPEZAR.md)** |
 | **2** | **Entérate de qué tienes que entregar** y cómo se llaman tus ficheros | **[📦 Entregables](02_ENTREGABLES.md)** |
 | **3** | **Prepara `ShellLab`:** ISO, VM, Ubuntu Server y SSH | **[Fase 0](fase-0-preparar-laboratorio/README.md)** |
 | **4** | **Empieza la Fase 1** con la conexión SSH comprobada | [Fase 1](fase-1-terminal-y-ficheros/README.md) |
