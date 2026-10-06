@@ -10,7 +10,7 @@ Es un **curso de terminal de Linux autocontenido**, en forma de simulación: sig
 Y existe por una razón muy concreta.
 
 > [!danger] 🎯 El problema que este curso resuelve
-> En el **Bloque 2 (Boochan)** montas un servidor Ubuntu con Samba AD DC, VPN, cuotas, montajes y ACL. Ocho fases.
+> Más adelante, en el **Bloque 2**, construirás el servidor de **Boochan**. Boochan Networks S.L. es la empresa ficticia que usamos como historia del curso. Ese servidor requerirá tareas de red, usuarios y almacenamiento que aquí solo aprenderás a reconocer. **Aún no tienes que saber hacerlas.**
 >
 > A partir de la **Fase 6** —montajes, `fstab`, setgid, sticky bit— y sobre todo en la **Fase 7** —ACL, máscara, `setfacl`— mucha gente deja de entender lo que escribe y empieza a **copiar comandos**. No porque el material esté mal, sino porque da por sabido un nivel de terminal que nadie ha enseñado.
 >

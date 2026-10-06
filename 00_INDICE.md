@@ -11,7 +11,7 @@ Vas a montar un servidor durante el curso. Y ese servidor se administra **escrib
 Este curso te enseña esos comandos **antes** de que los necesites, para que cuando llegues al servidor **sepas lo que estás escribiendo** en vez de copiar y pegar sin entender.
 
 > [!info] 🎓 Sigues a Marko, igual que en el curso de Git
-> **Marko** es técnico junior en **Boochan Networks S.L.** Ya sabe versionar con Git — eso lo aprendió contigo en el curso anterior. Ahora le toca lo siguiente: **la terminal de Linux**.
+> **Marko** es un personaje ficticio, técnico junior en **Boochan Networks S.L.**, la empresa inventada que sirve de escenario a las prácticas. Ya sabe versionar con Git — eso lo aprendió contigo en el curso anterior. Ahora le toca lo siguiente: **la terminal de Linux**. El servidor de esa empresa llegará en el Bloque 2; todavía no necesitas conocerlo.
 >
 > Cada ejercicio arranca de un encargo real de la empresa: algo que le pide **Lucía**, su responsable, o un lío que le ha dejado **Carlos**, el senior que nunca documenta nada.
 

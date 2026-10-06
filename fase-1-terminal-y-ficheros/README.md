@@ -2,7 +2,7 @@
 
 **Duración estimada:** 4 h · **Idea central:** Saber dónde estás y moverte sin miedo
 
-Marko no ha tocado Linux en su vida. En esta fase monta su laboratorio, abre una terminal por primera vez y aprende a moverse, mirar, crear y editar. Nada de servidores todavía: primero hay que saber andar.
+Marko preparó `ShellLab` con Ubuntu Server en la [Fase 0](../fase-0-preparar-laboratorio/README.md). Ahora entrará desde Git Bash por SSH y aprenderá a reconocer la sesión, moverse, mirar, crear y editar. Antes de cada práctica comprobará con `whoami` y `hostname` que trabaja dentro de la VM.
 
 **La idea central de la fase:** en Linux todo cuelga de una única raíz, y saber siempre dónde estás es la mitad del trabajo.
 
@@ -23,7 +23,7 @@ Marko no ha tocado Linux en su vida. En esta fase monta su laboratorio, abre una
 
 ### 🟢 N1 — Mínimo (2 ejercicios)
 
-- [`EJ-01-01-01`](EJ-01-01-01.md) — Marko monta el laboratorio: una VM con Ubuntu Desktop
+- [`EJ-01-01-01`](EJ-01-01-01.md) — Marko comprueba SSH y copia un archivo de prueba a Windows
 - [`EJ-01-01-02`](EJ-01-01-02.md) — Marko abre la terminal y aprende a leer el prompt
 
 ### 🔵 N2 — Básico (2 ejercicios)

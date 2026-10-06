@@ -1,6 +1,6 @@
 # FASE 0 — Prepara el laboratorio de Shell
 
-> **Módulo:** SOR — Sistemas Operativos en Red · **Bloque 0 · Curso de Shell**  
+> **Módulo:** SOR — Sistemas Operativos en Red · **Bloque 0 · Curso de Shell**
 > **Cuándo:** después de «Antes de empezar» y «Entregables», antes de la Fase 1.
 
 En este curso sigues a **Marko**, un técnico ficticio que está aprendiendo. Necesita un ordenador de pruebas donde ensayar comandos sin modificar los apuntes que guardas en Windows. Ese ordenador será una **máquina virtual** (VM): un sistema que funciona dentro de VirtualBox. Lo llamarás `ShellLab` e instalarás en él Ubuntu Server.
@@ -37,7 +37,7 @@ Descargar la ISO y contrastar su hash es una **evidencia preparatoria de RA.01**
 - **Cuatro vídeos**, uno por práctica. Antes de grabar lee todos los pasos, abre la entrada, prepara OBS y tu identificación. En cada vídeo preséntate, muestra tu identidad, graba el procedimiento, explica las decisiones y pon marcas de tiempo por paso. Crea una sola playlist llamada `B0_Curso_Shell`; los cuatro vídeos se suben como «No listado». Cada práctica repite su nombre exacto y sus instrucciones de cierre.
 - **Un `commit` y un `push`** desde el repositorio de apuntes al cerrar F0.4. La entrada debe contener los cuatro enlaces y la tabla de evidencias. Entrega el enlace del repositorio en la tarea de Teams.
 
-Consulta la [plantilla y la rúbrica completas](../02_ENTREGABLES.md#fase-0--una-entrada-cuatro-vídeos-y-una-entrega). La ISO, el disco virtual y la contraseña **no se suben** al repositorio.
+Consulta la [plantilla y la rúbrica completas](../02_ENTREGABLES.md). La ISO, el disco virtual y la contraseña **no se suben** al repositorio.
 
 > [!danger] Dos lugares, dos terminales
 > **ORDENADOR** = Windows, VirtualBox, Obsidian, Git Bash antes de `ssh`. **VM** = consola de Ubuntu dentro de VirtualBox o sesión SSH tras conectarte. Nunca ejecutes prácticas de administración en el Git Bash local ni compartas `Boveda_SOR` con la VM.
@@ -45,5 +45,8 @@ Consulta la [plantilla y la rúbrica completas](../02_ENTREGABLES.md#fase-0--una
 ## Salida de la fase
 
 Solo pasa a [Fase 1](../fase-1-terminal-y-ficheros/README.md) si puedes arrancar `ShellLab`, abrir Git Bash en Windows, conectar mediante el comando SSH que aprenderás en F0.4, comprobar que estás **dentro de Ubuntu**, salir de la conexión y localizar la instantánea `ShellLab - SSH operativo`.
+
+> [!warning] Comprobación previa en el aula
+> **Procedimiento no ejecutado todavía en un equipo de Conselleria.** Antes de pedirlo al alumnado, el profesor debe probar allí la apertura de PowerShell o Git Bash en la carpeta de la ISO, las pantallas de la versión instalada de VirtualBox, la regla NAT ligada a `127.0.0.1` y la conexión SSH real. Si una política del equipo bloquea alguno de esos pasos, se documentará la ruta que sí funcione antes de usar la práctica.
 
 [← Índice del curso](../00_INDICE.md) · [F0.1 →](F0-01_ISO.md)
