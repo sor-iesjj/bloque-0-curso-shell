@@ -36,7 +36,7 @@ Dentro de **tu bóveda de apuntes** —la que creaste en la Fase 0 de prerrequis
 ```
 
 > [!warning] ⚠️ Esa carpeta la creas TÚ, ahora, antes de empezar
-> Sigue el **Paso 2 de [Antes de empezar](01_ANTES_DE_EMPEZAR.md)**. Allí abres la terminal dentro de `Trimestre_1`, compruebas `pwd` y `git status`, y ejecutas `mkdir -p B0_Curso_Shell`. No copies `00_Apuntes/Trimestre_1/` delante del comando: **ya estás dentro de `Trimestre_1`**.
+> Sigue **«Paso 2 — Prepara tu cuaderno» en [Antes de empezar](01_ANTES_DE_EMPEZAR.md)**. Allí abres la terminal dentro de `Trimestre_1`, compruebas `pwd` y `git status`, y ejecutas `mkdir -p B0_Curso_Shell`. No copies `00_Apuntes/Trimestre_1/` delante del comando: **ya estás dentro de `Trimestre_1`**.
 >
 > *(Si tu bóveda usa otro trimestre porque empezaste más tarde, cambia el número. Lo que no cambia es `B0_Curso_Shell`.)*
 
@@ -118,6 +118,7 @@ Copiar del enunciado NO cuenta como respuesta.)*
 **1.**
 **2.**
 **3.**
+**4.**
 
 ---
 
@@ -132,6 +133,8 @@ Copiar del enunciado NO cuenta como respuesta.)*
 
 *(Lo que no te ha quedado claro.)*
 ```
+
+Si el ejercicio tiene menos de cuatro preguntas, elimina las líneas sobrantes. Si tiene más, añade líneas numeradas. La primera práctica tiene **cuatro**.
 
 > [!success] 🎯 Por qué se pide la fecha de inicio Y la de entrega
 > Porque **un ejercicio puede durarte varios días**, y eso es normal.

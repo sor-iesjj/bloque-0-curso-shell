@@ -204,13 +204,14 @@ A partir de ahora, en cada ejercicio:
 1. Abres el ejercicio en   01_Practicas/B0_Curso_Shell/fase-N-…/EJ-….md
 2. Abres tu entrada en     00_Apuntes/Trimestre_1/B0_Curso_Shell/shell-….md
    (el nombre te lo da el propio ejercicio, en su Paso 0)
-3. Grabas con OBS y haces el ejercicio en tu VM
-4. Escribes tus apuntes MIENTRAS trabajas, no al final
-5. Subes el vídeo y pegas su enlace en la entrada
-6. git add → git commit → git push
+3. Grabas con OBS y haces las pruebas dentro de ShellLab
+4. Si hay un archivo que entregar, lo copias por Intercambio_Shell y compruebas la copia en tu ordenador
+5. Escribes tus apuntes MIENTRAS trabajas, no al final
+6. Subes el vídeo y pegas su enlace en la entrada
+7. Desde Trimestre_1: compruebas la ruta → git add → revisas → git commit → git push
 ```
 
-> [!important] 📌 Los seis pasos, siempre iguales
+> [!important] 📌 Sigue este orden en cada ejercicio
 > **No te los vas a aprender leyéndolos**: te los vas a aprender repitiéndolos. En los tres primeros ejercicios te los recuerdo entero. A partir del cuarto, ya son tuyos.
 
 ---
@@ -232,4 +233,4 @@ A partir de ahora, en cada ejercicio:
 >
 > Y una costumbre que va a volver muchas veces este curso: **probar el circuito con algo que no importa, antes de que importe**.
 >
-> **Siguiente:** [📦 Qué tienes que entregar](02_ENTREGABLES.md) — cinco minutos y ya empiezas.
+> **Siguiente:** [📦 Qué tienes que entregar](02_ENTREGABLES.md).
