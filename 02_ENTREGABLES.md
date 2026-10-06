@@ -1,4 +1,4 @@
-	# 📦 Qué tienes que entregar — LÉEME ANTES DEL PRIMER EJERCICIO
+# 📦 Qué tienes que entregar — LÉEME ANTES DEL PRIMER EJERCICIO
 
 > **Módulo:** SOR — Sistemas Operativos en Red · **Profesor:** Pedro Navarro Miralles · IES Jorge Juan (Alicante)
 >
@@ -36,11 +36,7 @@ Dentro de **tu bóveda de apuntes** —la que creaste en la Fase 0 de prerrequis
 ```
 
 > [!warning] ⚠️ Esa carpeta la creas TÚ, ahora, antes de empezar
-> No la tienes todavía. Créala en tu bóveda y déjala lista:
->
-> ```bash
-> mkdir -p 00_Apuntes/Trimestre_1/B0_Curso_Shell
-> ```
+> Sigue el **Paso 2 de [Antes de empezar](01_ANTES_DE_EMPEZAR.md)**. Allí abres la terminal dentro de `Trimestre_1`, compruebas `pwd` y `git status`, y ejecutas `mkdir -p B0_Curso_Shell`. No copies `00_Apuntes/Trimestre_1/` delante del comando: **ya estás dentro de `Trimestre_1`**.
 >
 > *(Si tu bóveda usa otro trimestre porque empezaste más tarde, cambia el número. Lo que no cambia es `B0_Curso_Shell`.)*
 
@@ -170,12 +166,18 @@ Copiar del enunciado NO cuenta como respuesta.)*
 
 1. **Guarda tu entrada** con el nombre correcto en `00_Apuntes/Trimestre_1/B0_Curso_Shell/`.
 2. **Sube el vídeo** a tu playlist del curso y **pega su enlace dentro de la entrada**.
-3. **Sube la entrada a tu repositorio:**
+3. **Sube la entrada a tu repositorio desde el ordenador, no desde la VM.** Abre `Boveda_SOR/00_Apuntes/Trimestre_1` en el explorador, abre ahí una terminal y ejecuta:
    ```bash
-   git add 00_Apuntes/Trimestre_1/B0_Curso_Shell/
+   pwd
+   git status
+   git add B0_Curso_Shell/
+   git diff --cached --stat
    git commit -m "Curso Shell: EJ-01-02-01 terminado"
    git push
    ```
+   `pwd` muestra la carpeta actual y debe terminar en `Boveda_SOR/00_Apuntes/Trimestre_1`. `git status` debe reconocer el repositorio; si responde `not a git repository`, **para**. `git add` prepara los archivos del curso de Shell. `git diff --cached --stat` enseña qué archivos entrarían en el `commit`: si aparece uno ajeno al ejercicio, no confirmes todavía. `git commit` guarda los cambios preparados en el historial local y `git push` los envía a GitHub. Cambia el código del mensaje por el del ejercicio que has hecho.
+
+   Si el ejercicio genera un `.txt` o un `.sh` dentro de `ShellLab`, antes de `git add` hay que copiarlo al ordenador por `Intercambio_Shell`, abrir la copia para comprobarla y guardarla en `B0_Curso_Shell/` junto a la entrada. El primer ejercicio enseña y prueba el intercambio; **no ejecutes prácticas en la carpeta compartida**.
 4. **Entrega el enlace** a tu repositorio por la tarea de Teams.
 
 > [!success] 🎯 Aquí es donde el curso de Git empieza a servirte

@@ -31,7 +31,19 @@ Este curso **no empieza de cero**. Das por hecho que ya tienes:
 
 ---
 
-## **2 · CÓMO ESTÁ ORGANIZADA TU BÓVEDA** *(recuerdo rápido)*
+## **2 · LOS TRES LUGARES DE TRABAJO**
+
+**No hagas prácticas de Shell en la terminal de tu ordenador.** En este curso hay dos ordenadores: el que tienes delante (anfitrión) y el Ubuntu que crearás dentro de VirtualBox (máquina virtual o **VM**). La VM se llamará `ShellLab`.
+
+| Lugar | Qué haces ahí | Qué no haces ahí |
+| :--- | :--- | :--- |
+| Tu ordenador · `Boveda_SOR/01_Practicas/B0_Curso_Shell/` | Lees los enunciados. | Ejecutar los comandos que modifican usuarios, permisos, discos o servicios. |
+| VM `ShellLab` | Ejecutas los comandos y creas los archivos de prueba. | Abrir o modificar `Boveda_SOR`. |
+| Tu ordenador · `Boveda_SOR/00_Apuntes/Trimestre_1/B0_Curso_Shell/` | Escribes tu entrada y guardas una **copia revisada** de los archivos que haya que entregar. | Romper cosas para ver qué pasa. |
+
+En el **primer ejercicio** crearás también `Intercambio_Shell` **fuera de `Boveda_SOR`**. Será una bandeja para copiar archivos terminados de la VM al ordenador. Nunca se comparte la bóveda entera con la VM. La ubicación y la prueba paso a paso están en [`EJ-01-01-01`](fase-1-terminal-y-ficheros/EJ-01-01-01.md); todavía no necesitas esa carpeta para descargar el curso.
+
+### Así queda tu bóveda
 
 ```
 Boveda_SOR/
@@ -72,14 +84,19 @@ El material vive en un **repositorio plantilla** mío. Tú **sacas tu propia cop
 
 ### **3B · Clónalo en tu bóveda**
 
-Abre una terminal **en tu ordenador** (aquí todavía no hay máquina virtual) y ve a la carpeta de prácticas:
+1. En **tu ordenador**, abre el explorador de archivos y localiza **tu** `Boveda_SOR`. En el Bloque 0 · Fase 0.1 apuntaste dónde la creaste. Puede estar dentro de `Documentos/SOR/` o de `SOR/` en tu carpeta personal. **No presupongas que está directamente en `~`.**
+2. Entra en `01_Practicas`. Comprueba en la barra de direcciones que está **dentro de `Boveda_SOR`**.
+3. Abre una terminal **en esa carpeta**: en Windows, clic derecho en un espacio vacío → **Open Git Bash here / Abrir Git Bash aquí**; en Linux, clic derecho → **Abrir en terminal**. Si no aparece la opción, pide ayuda antes de seguir: el comando siguiente depende de dónde estés.
+4. Escribe `pwd` y lee la ruta. Debe terminar en `Boveda_SOR/01_Practicas` (en Git Bash las barras son `/` aunque estés en Windows). `pwd` significa *print working directory*: muestra la carpeta donde actuará la terminal.
+5. Sustituye `TU-USUARIO` por **tu usuario real de GitHub** y ejecuta:
 
 ```bash
-cd ~/Boveda_SOR/01_Practicas
 git clone git@github.com:TU-USUARIO/bloque-0-curso-shell.git B0_Curso_Shell
 cd B0_Curso_Shell
 ls
 ```
+
+`git clone` descarga tu copia del curso; `B0_Curso_Shell` es el nombre de la carpeta local. `cd` entra en ella y `ls` muestra su contenido. Si `pwd` no terminó donde se indicó en el punto 4, **no ejecutes `git clone`**: se descargaría en otro lugar.
 
 > [!warning] ⚠️ Cambia `TU-USUARIO` por tu usuario de GitHub
 > El resto de la línea, **tal cual**. Incluido el `B0_Curso_Shell` del final.
@@ -116,11 +133,17 @@ ls
 
 Tus apuntes **NO van en la carpeta del curso**. Van en tu repositorio de apuntes.
 
-```bash
-cd ~/Boveda_SOR/00_Apuntes/Trimestre_1
-mkdir -p B0_Curso_Shell
-ls
-```
+1. En el explorador de **tu ordenador**, entra en `Boveda_SOR/00_Apuntes/Trimestre_1`. Esa carpeta es la raíz de tu repositorio `apuntes-sor-t1`.
+2. Abre ahí Git Bash o una terminal, igual que en el paso anterior. Ejecuta:
+
+   ```bash
+   pwd
+   git status
+   mkdir -p B0_Curso_Shell
+   ls
+   ```
+
+   `pwd` debe terminar en `Boveda_SOR/00_Apuntes/Trimestre_1`. `git status` confirma que estás dentro de un repositorio; **no sigas si responde `not a git repository`**. `mkdir -p` crea la carpeta del curso sin borrar nada si ya existía. `ls` permite verla junto a `B0_Prerrequisitos`.
 
 - **✅ Bien:** ves `B0_Curso_Shell` junto a `B0_Prerrequisitos`.
 
@@ -139,8 +162,9 @@ ls
 
 **No esperes al primer ejercicio para descubrir que algo no funciona.** Vamos a hacer el recorrido entero con un fichero de prueba.
 
+**Sigue en la terminal abierta en `Trimestre_1`.** Antes de crear el fichero, repite `pwd` y `git status`. Si cerraste la terminal, vuelve a abrirla desde esa carpeta en el explorador.
+
 ```bash
-cd ~/Boveda_SOR/00_Apuntes/Trimestre_1
 echo "# Prueba del curso de Shell" > B0_Curso_Shell/prueba.md
 
 git add B0_Curso_Shell/
@@ -153,9 +177,10 @@ git push
 - **✅ Bien:** ves la carpeta `B0_Curso_Shell` con `prueba.md` dentro.
 - **❌ Mal:** si el `push` da error, **arréglalo hoy**. Es el mismo problema que tendrás en los 65 ejercicios.
 
-**Y ahora borra el fichero de prueba**, que ya ha cumplido:
+**Y ahora borra solo ese fichero de prueba**, que ya ha cumplido. Comprueba primero que la terminal sigue en `Trimestre_1`:
 
 ```bash
+pwd
 rm B0_Curso_Shell/prueba.md
 git add B0_Curso_Shell/
 git commit -m "Curso Shell: quito el fichero de prueba"
