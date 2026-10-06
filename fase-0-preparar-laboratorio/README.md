@@ -3,10 +3,12 @@
 > **Módulo:** SOR — Sistemas Operativos en Red · **Bloque 0 · Curso de Shell**  
 > **Cuándo:** después de «Antes de empezar» y «Entregables», antes de la Fase 1.
 
-Marko necesita un Ubuntu en el que pueda equivocarse sin tocar el servidor Boochan ni los apuntes reales. Al terminar esta fase tendrás una VM **`ShellLab` con Ubuntu Server**, accesible desde **Git Bash de tu ordenador por SSH**, y una instantánea a la que volver.
+En este curso sigues a **Marko**, un técnico ficticio que está aprendiendo. Necesita un ordenador de pruebas donde ensayar comandos sin modificar los apuntes que guardas en Windows. Ese ordenador será una **máquina virtual** (VM): un sistema que funciona dentro de VirtualBox. Lo llamarás `ShellLab` e instalarás en él Ubuntu Server.
+
+Al terminar podrás abrir **Git Bash en Windows** y, desde esa ventana, entrar por **SSH** en la VM. SSH es la conexión que permite usar la terminal de Ubuntu a distancia. También guardarás una **instantánea**, una copia del estado de la VM a la que podrás volver si una práctica la estropea.
 
 > [!important] Primera aproximación
-> Aquí montas lo imprescindible para aprender Shell. En el **Bloque 1** estudiarás con más profundidad la descarga y verificación de imágenes, la compatibilidad, las redes de VirtualBox y la instalación de sistemas operativos. Esta fase no sustituye ese bloque ni configura la red `10.10.10.0/24` de Boochan.
+> Aquí montas lo imprescindible para empezar. En el **Bloque 1**, más adelante, estudiarás con más profundidad cómo elegir y comprobar una imagen de instalación, dimensionar una VM, configurar distintas redes virtuales e instalar sistemas operativos. En esta fase usaremos una configuración sencilla y separada de la red física del centro.
 
 ## Índice y orden obligatorio
 
@@ -27,12 +29,12 @@ Marko necesita un Ubuntu en el que pueda equivocarse sin tocar el servidor Booch
 - **CE.01.e:** «Se han seleccionado los componentes a instalar». En F0.3 justificas la selección de OpenSSH.
 - **CE.01.i:** «Se ha comprobado la conectividad del servidor con los equipos cliente». En F0.4 demuestras la conexión desde el ordenador anfitrión.
 
-Descargar la ISO y contrastar su hash es una **evidencia preparatoria de RA.01**, no acredita por sí solo un CE distinto. Usar las opciones automáticas de disco en esta introducción **no acredita** el particionado y los sistemas de archivos de CE.01.c y CE.01.d: se trabajarán con detalle en el Bloque 1.
+Descargar la ISO y contrastar su hash es una **evidencia preparatoria de RA.01**; por sí solo no demuestra otro CE. Usar las opciones automáticas de disco en esta introducción tampoco demuestra que sepas diseñar particiones y elegir sistemas de archivos: eso se trabajará en el Bloque 1.
 
 ## Trabajo y entrega
 
 - **Una entrada de apuntes** para la fase completa: `00_Apuntes/Trimestre_1/B0_Curso_Shell/shell-0-preparacion-del-laboratorio.md`. Ábrela vacía **antes** de F0.1 y complétala después de cada práctica.
-- **Cuatro vídeos**, uno por práctica, con identidad al inicio, grabación del proceso y marcas de tiempo por paso. Playlist `B0_Curso_Shell`, visibilidad «No listado». Cada práctica indica su nombre exacto.
+- **Cuatro vídeos**, uno por práctica. Antes de grabar lee todos los pasos, abre la entrada, prepara OBS y tu identificación. En cada vídeo preséntate, muestra tu identidad, graba el procedimiento, explica las decisiones y pon marcas de tiempo por paso. Crea una sola playlist llamada `B0_Curso_Shell`; los cuatro vídeos se suben como «No listado». Cada práctica repite su nombre exacto y sus instrucciones de cierre.
 - **Un `commit` y un `push`** desde el repositorio de apuntes al cerrar F0.4. La entrada debe contener los cuatro enlaces y la tabla de evidencias. Entrega el enlace del repositorio en la tarea de Teams.
 
 Consulta la [plantilla y la rúbrica completas](../02_ENTREGABLES.md#fase-0--una-entrada-cuatro-vídeos-y-una-entrega). La ISO, el disco virtual y la contraseña **no se suben** al repositorio.
@@ -42,6 +44,6 @@ Consulta la [plantilla y la rúbrica completas](../02_ENTREGABLES.md#fase-0--una
 
 ## Salida de la fase
 
-Solo pasa a [Fase 1](../fase-1-terminal-y-ficheros/README.md) si puedes arrancar `ShellLab`, abrir Git Bash en Windows, conectar con `ssh -p 2222 marko@127.0.0.1` (o el puerto que anotaste), ejecutar `whoami` y `hostname` **dentro de Ubuntu**, salir con `exit` y localizar la instantánea `ShellLab - SSH operativo`.
+Solo pasa a [Fase 1](../fase-1-terminal-y-ficheros/README.md) si puedes arrancar `ShellLab`, abrir Git Bash en Windows, conectar mediante el comando SSH que aprenderás en F0.4, comprobar que estás **dentro de Ubuntu**, salir de la conexión y localizar la instantánea `ShellLab - SSH operativo`.
 
 [← Índice del curso](../00_INDICE.md) · [F0.1 →](F0-01_ISO.md)

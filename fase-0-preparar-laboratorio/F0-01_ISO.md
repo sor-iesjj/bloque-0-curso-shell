@@ -1,56 +1,76 @@
-# F0.1 — Descarga y comprueba la ISO
+# F0.1 — Descarga y comprueba la ISO en Windows
 
-> **SOR · Curso de Shell · Fase 0** · **RA.01 (preparación)**  
-> **Dónde trabajas:** navegador y Git Bash o PowerShell del **ORDENADOR**, todavía sin VM.  
-> **Vídeo:** `B0.S.0.1 · Marko comprueba la ISO` · **20 puntos**.
+> **SOR · Curso de Shell · Fase 0** · **Preparación de RA.01**  
+> **Dónde:** navegador, Explorador de archivos y PowerShell **del ordenador Windows**. Todavía no hay VM ni se usa Linux.  
+> **Vídeo:** `B0.S.0.1 · Marko comprueba la ISO` · **Playlist:** `B0_Curso_Shell` · **20 puntos**.
 
 > [!info] Encargo de Lucía
-> «Antes de instalar el laboratorio de Marko, demuestra de dónde viene el instalador y que el archivo descargado coincide con el publicado».
+> «Antes de instalar nada, comprueba que el archivo que vas a usar procede de Ubuntu y que la descarga no ha cambiado por el camino».
 
-## Qué necesitas entender
+## Antes de hacer clic: qué significan estas palabras
 
-- **ISO:** archivo que contiene el instalador de Ubuntu Server. Todavía no es una máquina virtual.
-- **SHA256:** resultado calculado a partir de los bytes del archivo. Si el valor de tu descarga coincide con el publicado en la página oficial, has comprobado su integridad respecto de esa fuente. **El hash solo no autentica a quien publicó la página**: por eso consultas la web oficial mediante HTTPS.
-- **LTS:** edición con soporte prolongado. Anota la versión exacta que descargaste; no inventes el nombre del archivo.
+- **ISO:** el archivo que descargaremos en Windows para instalar Ubuntu Server en una máquina virtual. Piensa en él como un DVD de instalación guardado en un solo archivo. Su nombre termina en `.iso`.
+- **Huella o hash SHA256:** un programa lee el archivo completo y produce una cadena de caracteres. Ubuntu publica la cadena correspondiente al archivo original. Si tu descarga da la misma cadena, sus bytes coinciden con los del archivo al que se refiere la lista oficial. Si da otra, **no se instala**. La comparación sirve para detectar cambios o errores de descarga; por sí sola no demuestra quién escribió la página web.
+- **`SHA256SUMS`:** lista publicada por Ubuntu que contiene nombres de archivos y sus huellas SHA256. La línea elegida tiene que nombrar **exactamente** tu ISO.
+- **PowerShell:** terminal incluida en Windows. En esta práctica se usa para calcular la huella del archivo guardado en el disco de Windows. No vamos a ejecutar ningún comando Linux.
+
+## Antes de grabar
+
+1. Lee **todos** los pasos de esta página, incluidos la verificación y la entrega.
+2. Ten preparado el navegador, el Explorador de archivos, OBS y una forma de mostrar tu identidad (por ejemplo, tu perfil de Teams o tu correo del centro). Evita mostrar datos que no formen parte de la práctica.
+3. Abre en tus apuntes la **única entrada de la Fase 0**, `B0_Curso_Shell/shell-0-preparacion-del-laboratorio.md`, dentro del repositorio `apuntes-sor-t1`. Copia la [plantilla de entregables](../02_ENTREGABLES.md#fase-0--una-entrada-cuatro-vídeos-y-una-entrega) y deja F0.1 lista para rellenar. **No esperes al final para crearla.**
+4. Comprueba que sabes dónde OBS guardará el vídeo. El nombre final será **`B0.S.0.1 · Marko comprueba la ISO`**.
 
 ## Procedimiento
 
-> [!example] Paso 0 — Abre la entrada y graba
-> En tu repositorio `apuntes-sor-t1`, crea vacía `B0_Curso_Shell/shell-0-preparacion-del-laboratorio.md` usando la [plantilla de entregables](../02_ENTREGABLES.md#fase-0--una-entrada-cuatro-vídeos-y-una-entrega). Abre OBS, preséntate y muestra tu identidad. Graba esta práctica completa.
+> [!example] Paso 0 — Empieza la grabación (**WINDOWS**)
+> **0A.** Inicia OBS y pulsa «Iniciar grabación».  
+> **0B.** Preséntate, muestra tu identidad y di: «Voy a descargar Ubuntu Server y comprobar en Windows la huella de la ISO».  
+> **0C.** Muestra la entrada F0.1 vacía: será donde documentes lo que ocurra, incluidos los fallos.
 
-> [!example] Paso 1 — Descarga de la fuente oficial (**ORDENADOR**)
-> Abre [Ubuntu Server](https://ubuntu.com/download/server). Elige la ISO **Ubuntu Server LTS para la arquitectura de tu equipo**; si no sabes cuál corresponde, anótalo y consulta antes de descargar. Guarda el archivo en una carpeta local que encuentres después. Anota en la entrada la página, versión, nombre exacto del `.iso` y carpeta. En el Bloque 1 analizarás con más detalle las ediciones y arquitecturas.
+> [!example] Paso 1 — Descarga la ISO oficial (**WINDOWS**)
+> **1A.** En el navegador, abre [la página oficial de Ubuntu Server](https://ubuntu.com/download/server).  
+> **1B.** Localiza la descarga **LTS** adecuada para el tipo de equipo indicado por el profesor. LTS significa que Ubuntu mantiene esa versión durante más tiempo. **No adivines** la arquitectura: si la página ofrece varias y no sabes cuál corresponde a tu equipo, anótalo y pregunta antes de descargar.  
+> **1C.** Descarga el `.iso` en una carpeta del disco de Windows que puedas localizar. Al terminar, abre el **Explorador de archivos** y ve a esa carpeta.  
+> **1D.** Copia en F0.1 la dirección de la página, la versión mostrada y el **nombre real** del archivo. No uses un nombre de ejemplo en tus apuntes.
 
-> [!example] Paso 2 — Localiza la suma oficial (**ORDENADOR**)
-> Desde el enlace de descarga oficial, localiza el directorio de esa misma versión en `releases.ubuntu.com` y su archivo `SHA256SUMS`. Busca allí la línea que **coincide exactamente con el nombre de tu ISO**. Copia la suma esperada y la dirección de la página a tus apuntes. Si no aparece el nombre, no uses una suma de otra versión: pide ayuda.
+> [!example] Paso 2 — Busca la huella publicada por Ubuntu (**WINDOWS**)
+> **2A.** En la información oficial de la misma versión, localiza el enlace al archivo `SHA256SUMS`. Si la página de descarga no lo muestra directamente, sigue su enlace al directorio oficial de esa versión en `releases.ubuntu.com`.  
+> **2B.** Abre `SHA256SUMS` en el navegador. Cada línea contiene una huella y el nombre de un archivo. Busca **el mismo nombre** que viste en el Explorador.  
+> **2C.** Copia en F0.1 la huella de esa línea y la dirección web del `SHA256SUMS`. Si el nombre no coincide, **detente**: puede ser otra versión y esa huella no sirve para tu descarga.
 
-> [!example] Paso 3 — Calcula la suma local (**ORDENADOR**)
-> Abre Git Bash en la carpeta donde está la ISO. Primero `pwd` confirma dónde estás y `ls` enseña el nombre exacto del archivo. Sustituye `NOMBRE-REAL.iso` por ese nombre:
+> [!example] Paso 3 — Calcula la huella de TU archivo con PowerShell (**WINDOWS**)
+> **3A.** Mantén abierto el Explorador **dentro de la carpeta que contiene la ISO**. Mira el nombre del archivo antes de escribir el comando.  
+> **3B.** Haz clic en la **barra de direcciones** del Explorador, escribe `powershell` y pulsa `Enter`. Se abrirá PowerShell situada en esa carpeta. Si la política del equipo impide abrirlo, anota el mensaje y avisa al profesor; no cambies la configuración del equipo.  
+> **3C.** En PowerShell escribe `Get-ChildItem` y pulsa `Enter`. Este comando **muestra** los archivos de la carpeta; comprueba que aparece tu `.iso`. Si no aparece, estás en otra carpeta: vuelve al Explorador y repite 3A–3B.  
+> **3D.** Sustituye `NOMBRE-REAL.iso` por el nombre exacto que acabas de ver, **manteniendo las comillas**. El ejemplo no se puede copiar sin cambiarlo:
 >
-> ```bash
-> pwd
-> ls
-> sha256sum NOMBRE-REAL.iso
+> ```powershell
+> Get-FileHash -LiteralPath '.\NOMBRE-REAL.iso' -Algorithm SHA256
 > ```
 >
-> `sha256sum` lee el archivo y calcula su huella; **no modifica la ISO**. Si el nombre contiene espacios, escríbelo entre comillas. Si Git Bash responde `command not found`, usa PowerShell en esa misma carpeta: `Get-FileHash .\NOMBRE-REAL.iso -Algorithm SHA256`. No copies el carácter `$` del prompt como parte del comando.
+> **3E.** Pulsa `Enter`. `Get-FileHash` **lee** el archivo y calcula la huella; `-LiteralPath` indica qué archivo leer; `'.\NOMBRE-REAL.iso'` significa «ese archivo en la carpeta actual»; `-Algorithm SHA256` pide usar el mismo cálculo que la lista oficial. **No borra ni modifica la ISO.** En el resultado, copia el valor del campo `Hash` a F0.1. Si aparece «no se encuentra la ruta», comprueba carpeta y nombre antes de repetir.
 
-> [!example] Paso 4 — Compara y documenta (**ORDENADOR**)
-> En tu entrada coloca juntos el SHA256 oficial y el calculado. Compáralos completos, no solo el principio. Escribe «coinciden» o «no coinciden». Si no coinciden, **detente**: comprueba el nombre y vuelve a descargar desde la fuente oficial antes de continuar.
+> [!example] Paso 4 — Compara y decide (**WINDOWS**)
+> **4A.** Coloca en F0.1, una debajo de otra, la huella de `SHA256SUMS` y la que mostró PowerShell.  
+> **4B.** Compara **todos** los caracteres. Mayúsculas y minúsculas en letras hexadecimales representan el mismo valor; si cambia algún carácter, las huellas no coinciden.  
+> **4C.** Escribe «Coinciden: puedo usar esta ISO» o «No coinciden: no instalo esta ISO». Si no coinciden, primero comprueba que elegiste la línea del archivo correcto; después vuelve a descargar desde la página oficial y repite el cálculo. No pases a F0.2 con una ISO distinta de la comprobada.
 
-> [!example] Paso 5 — Cierra el vídeo
-> Detén OBS; sube el vídeo como «No listado» a `B0_Curso_Shell` con el nombre `B0.S.0.1 · Marko comprueba la ISO`. En la descripción añade `00:00 Presentación` y una marca por paso. Pega el enlace en el apartado F0.1 de tu entrada. La entrada se sube a GitHub **al final de la Fase 0**, no necesitas crear otra.
+> [!example] Paso 5 — Termina el vídeo y registra su enlace (**WINDOWS**)
+> **5A.** Muestra en pantalla la comparación y explica con tus palabras qué comprobaste. Detén OBS.  
+> **5B.** En YouTube crea, si aún no existe, **una sola playlist** llamada `B0_Curso_Shell`. Sube el vídeo con el título **`B0.S.0.1 · Marko comprueba la ISO`** y visibilidad **«No listado»**. No crees una playlist por práctica.  
+> **5C.** En la descripción escribe `00:00 Presentación` y una marca de tiempo para cada paso grabado. Copia el enlace del vídeo en F0.1 de la entrada. La entrada común se subirá al repositorio **al cerrar F0.4**; sigue escribiendo en ella durante la fase.
 
-## Comprobación y puntuación
+## Cómo se puntúa y qué compruebas
 
-| Evidencia visible en vídeo y apuntes | Puntos |
+| Evidencia que debe verse en vídeo y apuntes | Puntos |
 | :--- | ---: |
-| Fuente oficial, versión y nombre de ISO identificados | 5 |
-| `SHA256SUMS` correspondiente a esa misma ISO | 5 |
-| Cálculo local mostrado y coincidencia completa documentada | 8 |
-| Explicas qué significa la coincidencia y qué harías si falla | 2 |
+| Página oficial, versión, carpeta y nombre real de la ISO | 5 |
+| Línea correcta del `SHA256SUMS` de esa versión | 5 |
+| Comando de PowerShell ejecutado sobre el archivo correcto y valor `Hash` anotado | 8 |
+| Comparación completa, decisión y explicación de qué hacer si falla | 2 |
 
-> [!question] Para responder en la entrada
-> ¿Por qué el nombre del archivo junto al hash importa? ¿Qué harías si los valores no coincidieran?
+> [!question] Responde en F0.1 con tus palabras
+> ¿Por qué importa que la línea de `SHA256SUMS` nombre tu archivo exacto? ¿Qué demuestra una coincidencia de huellas y qué harías si no coincidieran?
 
 **Siguiente:** [F0.2 · Crea la VM](F0-02_VM.md). · [Índice de Fase 0](README.md)

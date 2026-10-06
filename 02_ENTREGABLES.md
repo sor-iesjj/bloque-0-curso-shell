@@ -2,7 +2,7 @@
 
 > **Módulo:** SOR — Sistemas Operativos en Red · **Profesor:** Pedro Navarro Miralles · IES Jorge Juan (Alicante)
 >
-> **📍 Cuándo se lee:** **AHORA.** Antes de abrir la Fase 1, antes de encender ninguna máquina.
+> **📍 Cuándo se lee:** **AHORA.** Antes de abrir la Fase 0, antes de encender ninguna máquina.
 
 ---
 
@@ -13,9 +13,65 @@
 
 ---
 
-## **1 · LOS TRES ENTREGABLES DE CADA EJERCICIO**
+## FASE 0 — UNA ENTRADA, CUATRO VÍDEOS Y UNA ENTREGA
 
-Cada uno de los 65 ejercicios produce **tres cosas**, y las tres van juntas:
+La [Fase 0](fase-0-preparar-laboratorio/README.md) se entrega **al terminar F0.4**. Abre antes de F0.1 una única nota: `00_Apuntes/Trimestre_1/B0_Curso_Shell/shell-0-preparacion-del-laboratorio.md`. Complétala después de cada práctica; no la reconstruyas al final de memoria.
+
+| Práctica | Vídeo en `B0_Curso_Shell` · «No listado» | Puntos |
+| :--- | :--- | ---: |
+| F0.1 | `B0.S.0.1 · Marko comprueba la ISO` | 20 |
+| F0.2 | `B0.S.0.2 · Marko crea ShellLab` | 25 |
+| F0.3 | `B0.S.0.3 · Marko instala Ubuntu Server` | 25 |
+| F0.4 | `B0.S.0.4 · Marko entra por SSH` | 30 |
+
+**Total: 100 puntos.** La tabla concreta de cada práctica está en su procedimiento. En cada vídeo: presentación e identidad, proceso grabado, `00:00 Presentación` y una marca por paso en la descripción. No publiques contraseñas, claves privadas, ISO ni disco virtual. En la nota van las medidas y decisiones reales, las comprobaciones y los cuatro enlaces. La instantánea se demuestra en vídeo; **no se sube** al repositorio.
+
+Usa esta estructura para la entrada común:
+
+```markdown
+# Fase 0 · Preparación del laboratorio Shell
+
+- Alumno:
+- Fecha de inicio:
+- Fecha de cierre:
+- VM: ShellLab
+- Usuario Ubuntu: marko
+- Puerto SSH anfitrión: 2222 (o el que realmente usé)
+
+## F0.1 · ISO
+Fuente oficial, versión y nombre del archivo; URL de SHA256SUMS;
+SHA256 oficial y calculado; comparación y respuesta a las preguntas.
+Vídeo:
+
+## F0.2 · Máquina virtual
+Arquitectura, RAM y espacio medidos; recursos elegidos y justificación;
+manual frente a desatendida; ubicación del disco; NAT; respuestas.
+Vídeo:
+
+## F0.3 · Instalación
+Decisiones de teclado, red, disco virtual, cuenta y OpenSSH;
+resultado de whoami, hostname e ip -br address; respuestas.
+Vídeo:
+
+## F0.4 · SSH y punto de control
+Regla NAT, puerto real, prueba de huella y conexión;
+resultado de whoami, hostname, pwd y exit;
+nombre de la instantánea y comprobación; respuestas.
+Vídeo:
+
+## Fallos y solución
+Mensaje literal, dónde apareció y cómo lo resolví; si no hubo fallos,
+indico qué comprobé para saber que funcionaba.
+
+## Qué he aprendido y qué revisaré en el Bloque 1
+Explicación propia; no copiar el procedimiento.
+```
+
+Desde la raíz de **`apuntes-sor-t1`**, después de completar F0.4, prepara **solo** `B0_Curso_Shell/shell-0-preparacion-del-laboratorio.md`, revisa con `git diff --cached --stat`, haz un `commit`, `push` y comprueba la nota en GitHub. Entrega en Teams el enlace al repositorio. Los comandos exactos están en [F0.4, Paso 7](fase-0-preparar-laboratorio/F0-04_SSH.md).
+
+## **1 · LOS TRES ENTREGABLES DE CADA EJERCICIO DESDE LA FASE 1**
+
+Cada uno de los 65 ejercicios de las fases 1–7 produce **tres cosas**, y las tres van juntas:
 
 | # | Entregable | Dónde vive |
 | :--- | :--- | :--- |
@@ -54,7 +110,7 @@ shell-<fase>.<nivel>.<numero>-<titulo-en-minusculas-con-guiones>.md
 
 | Ejercicio | Fichero de apuntes |
 | :--- | :--- |
-| `EJ-01-01-01` — Marko monta el laboratorio | `shell-1.1.1-monta-el-laboratorio.md` |
+| `EJ-01-01-01` — Marko comprueba el acceso y copia una prueba | `shell-1.1.1-prueba-el-acceso-ssh.md` |
 | `EJ-01-02-01` — Marko se mueve por el árbol | `shell-1.2.1-se-mueve-por-el-arbol.md` |
 | `EJ-06-01-01` — Cuando tres casillas no llegan | `shell-6.1.1-cuando-tres-casillas-no-llegan.md` |
 
@@ -134,7 +190,7 @@ Copiar del enunciado NO cuenta como respuesta.)*
 *(Lo que no te ha quedado claro.)*
 ```
 
-Si el ejercicio tiene menos de cuatro preguntas, elimina las líneas sobrantes. Si tiene más, añade líneas numeradas. La primera práctica tiene **cuatro**.
+Si el ejercicio tiene menos de cuatro preguntas, elimina las líneas sobrantes. Si tiene más, añade líneas numeradas. El **Paso 0 del ejercicio** da el nombre exacto de su nota.
 
 > [!success] 🎯 Por qué se pide la fecha de inicio Y la de entrega
 > Porque **un ejercicio puede durarte varios días**, y eso es normal.
@@ -180,7 +236,7 @@ Si el ejercicio tiene menos de cuatro preguntas, elimina las líneas sobrantes. 
    ```
    `pwd` muestra la carpeta actual y debe terminar en `Boveda_SOR/00_Apuntes/Trimestre_1`. `git status` debe reconocer el repositorio; si responde `not a git repository`, **para**. `git add` prepara los archivos del curso de Shell. `git diff --cached --stat` enseña qué archivos entrarían en el `commit`: si aparece uno ajeno al ejercicio, no confirmes todavía. `git commit` guarda los cambios preparados en el historial local y `git push` los envía a GitHub. Cambia el código del mensaje por el del ejercicio que has hecho.
 
-   Si el ejercicio genera un `.txt` o un `.sh` dentro de `ShellLab`, antes de `git add` hay que copiarlo al ordenador por `Intercambio_Shell`, abrir la copia para comprobarla y guardarla en `B0_Curso_Shell/` junto a la entrada. El primer ejercicio enseña y prueba el intercambio; **no ejecutes prácticas en la carpeta compartida**.
+   Si el ejercicio genera un `.txt` o un `.sh` dentro de `ShellLab`, antes de `git add` cópialo con `scp` a una carpeta temporal **fuera de la bóveda**, abre la copia para comprobarla y guárdala junto a la entrada. [El primer ejercicio](fase-1-terminal-y-ficheros/EJ-01-01-01.md) enseña el procedimiento. **Nunca hagas prácticas sobre una carpeta de la bóveda compartida con la VM.**
 4. **Entrega el enlace** a tu repositorio por la tarea de Teams.
 
 > [!success] 🎯 Aquí es donde el curso de Git empieza a servirte
@@ -228,4 +284,4 @@ ENTREGA   git add → commit → push → enlace del repo por Teams
 >
 > Y que la estructura no está para fastidiarte. Está para que dentro de seis meses, cuando busques *"cómo era aquello de los permisos"*, **encuentres tu propia respuesta en dos clics** — que es exactamente lo que hace un técnico con su documentación.
 >
-> **Siguiente:** [Empieza por la Fase 1](fase-1-terminal-y-ficheros/README.md).
+> **Siguiente:** [Empieza por la Fase 0](fase-0-preparar-laboratorio/README.md).

@@ -220,7 +220,7 @@ A partir de ahora, en cada ejercicio:
 ## ✅ **CHECKLIST — antes de empezar la Fase 0**
 
 - [ ] Tengo mi copia del curso en GitHub *(botón `Use this template`)*.
-- [ ] La he clonado en `01_Practicas/B0_Curso_Shell/` y el `ls` muestra las siete fases.
+- [ ] La he clonado en `01_Practicas/B0_Curso_Shell/` y el `ls` muestra la Fase 0 y las siete fases siguientes.
 - [ ] He creado `00_Apuntes/Trimestre_1/B0_Curso_Shell/`.
 - [ ] `git status` me responde desde `Trimestre_1` *(estoy dentro del repo)*.
 - [ ] **He hecho la prueba completa**: fichero → `add` → `commit` → `push` → **lo he visto en GitHub**.
