@@ -65,20 +65,16 @@ Boveda_SOR/
 
 ## **3 · 🔴 PASO 1 — TRAE ESTE CURSO A TU ORDENADOR**
 
-El material vive en un **repositorio plantilla** mío. Tú **sacas tu propia copia** y la clonas.
+El material vive en el **repositorio público del profesor**. Lo descargas para leer los enunciados en Obsidian y poder recibir las correcciones posteriores. Tus apuntes y entregas van en otro repositorio: `apuntes-sor-t1`.
 
-### **3A · Saca tu copia en GitHub**
+### **3A · Localiza el repositorio del curso**
 
-1. En el navegador, abre el repositorio del curso: **`https://github.com/sor-iesjj/bloque-0-curso-shell`**. Aquí obtienes tu copia; después leerás el curso descargado en Obsidian.
-2. Pulsa el botón verde **`Use this template`** → **`Create a new repository`**
-3. **Repository name:** `bloque-0-curso-shell` *(déjalo igual)*
-4. Ponlo **público** o **privado**, como prefieras
-5. **`Create repository`**
+1. En el navegador, abre **`https://github.com/sor-iesjj/bloque-0-curso-shell`**.
+2. Comprueba que ves `00_INDICE.md` y `fase-0-preparar-laboratorio/`. Esa es la fuente del material.
+3. Deja la página abierta para comprobar la dirección en el siguiente apartado. **No pulses `Use this template`**: aquí necesitas el material actualizado del profesor, no una copia independiente en tu cuenta.
 
 > [!info] 🎓 Qué acaba de pasar
-> Ese repositorio **ya no es mío: es tuyo.** Tiene su propio historial y puedes escribir, romper y subir sin pedirle permiso a nadie.
->
-> Es exactamente lo que hiciste en la **Bloque 0 · Fase 0.4.a** con Boochan. Todos los repos del curso son plantilla.
+> Has localizado **el material que leerás**. En la Fase 0.4.a creaste copias propias de otros repositorios para practicar `commit` y `push`. Aquí el objetivo es diferente: los enunciados siguen siendo del profesor y tus apuntes se guardan en `apuntes-sor-t1`.
 
 ### **3B · Clónalo en tu bóveda**
 
@@ -86,18 +82,18 @@ El material vive en un **repositorio plantilla** mío. Tú **sacas tu propia cop
 2. Entra en `01_Practicas`. Comprueba en la barra de direcciones que está **dentro de `Boveda_SOR`**.
 3. Abre una terminal **en esa carpeta**: en Windows, clic derecho en un espacio vacío → **Open Git Bash here / Abrir Git Bash aquí**; en Linux, clic derecho → **Abrir en terminal**. Si no aparece la opción, pide ayuda antes de seguir: el comando siguiente depende de dónde estés.
 4. Escribe `pwd` y lee la ruta. Debe terminar en `Boveda_SOR/01_Practicas` (en Git Bash las barras son `/` aunque estés en Windows). `pwd` significa *print working directory*: muestra la carpeta donde actuará la terminal.
-5. Sustituye `TU-USUARIO` por **tu usuario real de GitHub** y ejecuta:
+5. Copia estas líneas **una por una**. Tras `git clone`, espera a que termine sin error antes de ejecutar `cd`:
 
 ```bash
-git clone git@github.com:TU-USUARIO/bloque-0-curso-shell.git B0_Curso_Shell
+git clone https://github.com/sor-iesjj/bloque-0-curso-shell.git B0_Curso_Shell
 cd B0_Curso_Shell
 ls
 ```
 
-`git clone` descarga tu copia del curso; `B0_Curso_Shell` es el nombre de la carpeta local. `cd` entra en ella y `ls` muestra su contenido. Si `pwd` no terminó donde se indicó en el punto 4, **no ejecutes `git clone`**: se descargaría en otro lugar.
+`git clone` descarga el curso público; **HTTPS** permite leerlo sin usar una clave SSH. `B0_Curso_Shell` es el nombre de la carpeta local. `cd` entra en ella y `ls` muestra su contenido. Si `pwd` no terminó donde se indicó en el punto 4, **no ejecutes `git clone`**: se descargaría en otro lugar. Si `git clone` falla o ya existe `B0_Curso_Shell`, **para**; no continúes como si se hubiera descargado.
 
-> [!warning] ⚠️ Cambia `TU-USUARIO` por tu usuario de GitHub
-> El resto de la línea, **tal cual**. Incluido el `B0_Curso_Shell` del final.
+> [!warning] ⚠️ Comprueba qué repositorio descargas
+> La dirección debe contener **`sor-iesjj/bloque-0-curso-shell`**. No la cambies por tu usuario: aquí lees el material del profesor. El `B0_Curso_Shell` del final debe quedar tal cual.
 
 > [!important] 📌 El `B0_Curso_Shell` del final no está de adorno
 > Es el **segundo argumento** de `git clone`, y es el que decide **cómo se va a llamar la carpeta** en tu ordenador:
@@ -106,24 +102,24 @@ ls
 > git clone  <dirección del repositorio>  <nombre de la carpeta>
 > ```
 >
-> **Si lo omites**, Git le pone el nombre del repositorio — te quedaría `bloque-0-curso-shell/` — y tendrías **la misma cosa con dos nombres distintos** según dónde la mires. Eso es exactamente lo que no queremos.
+> **Si lo omites**, Git le pone el nombre del repositorio — te quedaría `bloque-0-curso-shell/` — y la carpeta local no tendría el nombre que usan estas instrucciones.
 >
 > Ya lo usaste en la **Fase 0.3**, cuando clonaste `apuntes-sor-t1` y le dijiste que se llamara `Trimestre_1`.
 
 > [!info] 🎓 Entonces, ¿por qué el repositorio se llama de otra manera?
-> Porque **GitHub obliga**: los nombres de repositorio van en minúsculas y con guiones, no admite `B0_Curso_Shell`.
+> Porque **en este curso se eligieron dos nombres**: uno para el repositorio público y otro para la carpeta local. GitHub sí admite letras mayúsculas y guiones bajos; esta diferencia es una convención del curso.
 >
 > Así que hay dos nombres para dos sitios distintos, y no se mezclan:
 >
 > | Dónde vive | Cómo se llama |
 > | :--- | :--- |
-> | **En GitHub**, el repositorio | `bloque-0-curso-shell` *(me lo impone GitHub)* |
+> | **En GitHub**, el repositorio del profesor | `bloque-0-curso-shell` *(nombre elegido para el curso)* |
 > | **En tu ordenador**, la carpeta | `B0_Curso_Shell` *(lo decides tú, con el segundo argumento)* |
 >
 > **Dentro de tu bóveda, una cosa tiene un nombre y solo uno.** Tus apuntes del curso están en `B0_Curso_Shell`, la práctica está en `B0_Curso_Shell`, y tu playlist se llama `B0_Curso_Shell`. Cuando yo diga *"esto es del Curso de Shell"*, no hay nada que traducir.
 
 - **✅ Bien:** el `ls` te muestra `00_INDICE.md`, `01_ANTES_DE_EMPEZAR.md`, `02_ENTREGABLES.md`, la carpeta `fase-0-preparar-laboratorio` y las siete carpetas siguientes.
-- **❌ Mal:** *"Permission denied (publickey)"* → tu SSH no está configurado. Vuelve a la **Fase 0.2.2**.
+- **❌ Mal:** `Repository not found` o error de conexión → comprueba la URL y la conexión del navegador; pide ayuda antes de continuar.
 
 ### **3C · Abre el curso descargado en Obsidian**
 
@@ -132,7 +128,21 @@ ls
 3. En ese índice, abre **«Antes de empezar»** y comprueba que estás leyendo la misma guía dentro de Obsidian. Vuelve al índice para seguir el orden indicado: «Entregables» y luego «Fase 0».
 4. Comprueba que junto al índice ves `02_ENTREGABLES.md` y la carpeta `fase-0-preparar-laboratorio`. Si faltan, vuelve al Paso 3B y revisa la ruta del clon antes de continuar.
 
-Desde este punto, lee el material del curso **en Obsidian**. GitHub se ha usado para obtener tu copia y se usará al comprobar las entregas; los PDF que facilite el profesor pueden servirte como apoyo.
+Desde este punto, lee el material del curso **en Obsidian**. GitHub se ha usado para obtener el curso; las entregas se comprueban en **tu repositorio de apuntes**. Los PDF que facilite el profesor pueden servirte como apoyo.
+
+### **3D · Actualiza el material cuando lo indique el profesor**
+
+La descarga inicial se hace una sola vez. **Cuando el profesor anuncie una corrección**, actualiza la carpeta que ya tienes; no vuelvas a ejecutar `git clone`:
+
+1. En el Explorador de archivos, entra en `Boveda_SOR/01_Practicas/B0_Curso_Shell` y abre **Git Bash aquí**. Es la carpeta de los enunciados, no la de tus apuntes.
+2. Ejecuta `pwd`. **Sigue solo si** termina en `/Boveda_SOR/01_Practicas/B0_Curso_Shell`.
+3. Ejecuta `git status`. **Sigue solo si** dice `working tree clean` o «árbol de trabajo limpio». Si hay archivos cambiados, **no los borres**: pide ayuda antes de actualizar.
+4. Ejecuta `git remote -v`. Las dos líneas de `origin` deben contener `sor-iesjj/bloque-0-curso-shell`. Si aparece tu usuario de GitHub, **para**: has abierto otra copia.
+5. Ejecuta `git pull --ff-only`. `pull` descarga la corrección; `--ff-only` evita crear una fusión inesperada. Si aparece un error, **para y enseña el mensaje al profesor**.
+6. Ejecuta `git status` otra vez y abre el enunciado corregido en Obsidian. Tus apuntes en `00_Apuntes/Trimestre_1` no se modifican.
+
+> [!danger] 🛑 En `B0_Curso_Shell` se lee y se actualiza; no se entrega
+> No hagas `git add`, `git commit` ni `git push` en esta carpeta. Las entregas salen de `Trimestre_1`.
 
 ---
 
@@ -226,8 +236,8 @@ A partir de ahora, en cada ejercicio:
 
 ## ✅ **CHECKLIST — antes de empezar la Fase 0**
 
-- [ ] Tengo mi copia del curso en GitHub *(botón `Use this template`)*.
-- [ ] La he clonado en `01_Practicas/B0_Curso_Shell/` y el `ls` muestra la Fase 0 y las siete fases siguientes.
+- [ ] He localizado el repositorio público `sor-iesjj/bloque-0-curso-shell`.
+- [ ] Lo he clonado en `01_Practicas/B0_Curso_Shell/` y el `ls` muestra la Fase 0 y las siete fases siguientes.
 - [ ] He abierto en Obsidian `Boveda_SOR/01_Practicas/B0_Curso_Shell/00_INDICE.md` desde la copia descargada.
 - [ ] He creado `00_Apuntes/Trimestre_1/B0_Curso_Shell/`.
 - [ ] `git status` me responde desde `Trimestre_1` *(estoy dentro del repo)*.
