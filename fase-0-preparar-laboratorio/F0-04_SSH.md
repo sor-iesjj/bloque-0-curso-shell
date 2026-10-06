@@ -19,16 +19,17 @@
 ## Antes de grabar
 
 1. Lee **toda** la práctica, incluida la tabla «Si no conecta». Ubica en VirtualBox el Adaptador 1 de `ShellLab`; debe seguir en NAT.
-2. Abre la entrada `shell-0-preparacion-del-laboratorio.md` por F0.4; comprueba que ya contiene F0.1, F0.2 y F0.3. Deja preparada una línea para anotar el puerto que realmente uses.
-3. Ten abiertas la consola de la VM, Git Bash en Windows y OBS. Prepara tu identidad. No digas ni muestres tu contraseña.
-4. El título del vídeo será **`B0.S.0.4 · Marko entra por SSH`**. Lo subirás a la **misma playlist** `B0_Curso_Shell` como **«No listado»**, con marcas de tiempo por paso.
+2. En Obsidian abre tu nota `Boveda_SOR/00_Apuntes/Trimestre_1/B0_Curso_Shell/shell-0-preparacion-del-laboratorio.md`. Comprueba que los apartados **«F0.1 · ISO»**, **«F0.2 · Máquina virtual»** y **«F0.3 · Instalación»** ya contienen tus resultados.
+3. En el encabezado de esa nota identifica la línea «Puerto SSH anfitrión»; ahí anotarás el puerto que realmente uses. Después baja al apartado **«F0.4 · SSH y punto de control»**, donde registrarás la conexión y la instantánea.
+4. Ten abiertas la consola de la VM, Git Bash en Windows y OBS. Prepara tu identidad. No digas ni muestres tu contraseña.
+5. El título del vídeo será **`B0.S.0.4 · Marko entra por SSH`**. Lo subirás a la **misma playlist** `B0_Curso_Shell` como **«No listado»**, con marcas de tiempo por paso.
 
 ## Procedimiento
 
 > [!example] Paso 0 — Empieza la grabación (**WINDOWS**)
 > - **0A.** Pulsa «Iniciar grabación» en OBS.
 > - **0B.** Preséntate, muestra tu identidad y explica: «Conectaré Git Bash de Windows al Ubuntu Server de mi VM».
-> - **0C.** Muestra el apartado F0.4 de la entrada, todavía sin resultados. Anotarás lo que ocurra realmente.
+> - **0C.** Muestra **«F0.4 · SSH y punto de control»** de tu nota, todavía sin resultados. Ahí anotarás lo que ocurra realmente.
 
 > [!example] Paso 1 — Comprueba que Git Bash tiene el cliente (**WINDOWS, todavía fuera de Ubuntu**)
 > - **1A.** Abre Git Bash en Windows. Antes de teclear, recuerda: aquí los comandos actúan en **Windows**.
@@ -95,7 +96,7 @@
 > pwd
 > ```
 >
-> - **5B.** `whoami` debe identificar a `marko`. `hostname` debe mostrar `shelllab`. `pwd` muestra la carpeta actual de Ubuntu. Anota los resultados reales en F0.4; **estos tres comandos ahora se ejecutan en la VM, aunque la ventana sea Git Bash de Windows**.
+> - **5B.** `whoami` debe identificar a `marko`. `hostname` debe mostrar `shelllab`. `pwd` muestra la carpeta actual de Ubuntu. Anota los resultados reales bajo **«F0.4 · SSH y punto de control»** de tu nota; **estos tres comandos ahora se ejecutan en la VM, aunque la ventana sea Git Bash de Windows**.
 > - **5C.** Ejecuta `exit`. Este comando cierra la sesión SSH y te devuelve a **Git Bash local de Windows**. Anota qué cambió en el indicador de la terminal. Si quieres comprobarlo, ejecuta `hostname` de nuevo: ahora se refiere al anfitrión.
 
 > [!example] Paso 6 — Guarda una instantánea (**VM y WINDOWS**)
@@ -105,7 +106,7 @@
 
 > [!example] Paso 7 — Cierra el vídeo y entrega (**WINDOWS, repositorio de apuntes**)
 > - **7A.** Detén OBS. Sube el vídeo con el título **`B0.S.0.4 · Marko entra por SSH`** a la playlist **`B0_Curso_Shell`**, como **«No listado»**. Añade `00:00 Presentación` y una marca por cada paso en la descripción.
-> - **7B.** Pega en F0.4 el enlace de este vídeo. Comprueba que la entrada común tiene **los cuatro enlaces, las 20 respuestas numeradas** y las evidencias de F0.1 a F0.4. No incluyas contraseñas, claves privadas, ISO ni discos virtuales.
+> - **7B.** Pega el enlace en la línea «Vídeo» bajo **«F0.4 · SSH y punto de control»** de tu nota. Comprueba que esa misma nota contiene **los cuatro enlaces, las 20 respuestas numeradas** y las evidencias de las cuatro prácticas. No incluyas contraseñas, claves privadas, ISO ni discos virtuales.
 > - **7C.** En el Explorador de Windows entra en `Boveda_SOR/00_Apuntes/Trimestre_1`, que es la raíz de tu repositorio `apuntes-sor-t1`. Abre **Git Bash en esa carpeta**, como ya aprendiste en el curso de Git. Antes de subir, ejecuta:
 >
 > ```bash
@@ -139,10 +140,10 @@
 | Huella contrastada y conexión SSH con contraseña | 6 |
 | `whoami`, `hostname`, `pwd` y `exit` ejecutados y explicados | 3 |
 | Instantánea visible y entrada completa comprobada en GitHub | 5 |
-| Respuestas 1–5 en F0.4: un punto por respuesta correcta y explicada | 5 |
+| Respuestas 1–5 de esta práctica en la nota: un punto por respuesta correcta y explicada | 5 |
 
-> [!question] F0.4 · Responde las cinco preguntas en tu entrada de apuntes
-> Escribe «F0.4.1» a «F0.4.5» y contesta con tus palabras. Si cambiaste el puerto `2222`, usa en la respuesta el puerto que anotaste de verdad.
+> [!question] F0.4 · Responde las cinco preguntas bajo «F0.4 · SSH y punto de control» de tu nota
+> Usa los números «F0.4.1» a «F0.4.5» de la plantilla y contesta con tus palabras. Si cambiaste el puerto `2222`, usa en la respuesta el puerto que anotaste de verdad.
 >
 > 1. **F0.4.1.** ¿Dónde se ejecuta `ssh -V` antes de conectar? Después de entrar por SSH, ¿dónde se ejecutan `whoami` y `pwd`, aunque uses la misma ventana de Git Bash?
 > 2. **F0.4.2.** En `ssh -p 2222 marko@127.0.0.1`, ¿qué significan `marko`, `127.0.0.1` y `2222`? ¿Qué puerto recibe la conexión dentro de Ubuntu?

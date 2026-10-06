@@ -33,9 +33,9 @@ Descargar la ISO y contrastar su hash es una **evidencia preparatoria de RA.01**
 
 ## Trabajo y entrega
 
-- **Una entrada de apuntes** para la fase completa: `00_Apuntes/Trimestre_1/B0_Curso_Shell/shell-0-preparacion-del-laboratorio.md`. Ábrela vacía **antes** de F0.1 y complétala después de cada práctica. En ella respondes, con tus palabras, las cinco preguntas numeradas de cada práctica: 20 respuestas en total.
+- **Una nota de apuntes** para la fase completa: `Boveda_SOR/00_Apuntes/Trimestre_1/B0_Curso_Shell/shell-0-preparacion-del-laboratorio.md`. Créala con la [plantilla de entrega](../02_ENTREGABLES.md) **antes** de la práctica F0.1. Dentro hay cuatro apartados titulados F0.1, F0.2, F0.3 y F0.4. Tras cada práctica rellenas su apartado; en la misma nota respondes las cinco preguntas de cada una: 20 respuestas en total.
 - **Cuatro vídeos**, uno por práctica. Antes de grabar lee todos los pasos, abre la entrada, prepara OBS y tu identificación. En cada vídeo preséntate, muestra tu identidad, graba el procedimiento, explica las decisiones y pon marcas de tiempo por paso. Crea una sola playlist llamada `B0_Curso_Shell`; los cuatro vídeos se suben como «No listado». Cada práctica repite su nombre exacto y sus instrucciones de cierre.
-- **Un `commit` y un `push`** desde el repositorio de apuntes al cerrar F0.4. La entrada debe contener los cuatro enlaces y la tabla de evidencias. Entrega el enlace del repositorio en la tarea de Teams.
+- **Un `commit` y un `push`** desde el repositorio de apuntes al cerrar la práctica F0.4. La nota debe contener los cuatro enlaces, las medidas y decisiones reales, y las 20 respuestas. Entrega el enlace del repositorio en la tarea de Teams.
 
 Consulta la [plantilla y la rúbrica completas](../02_ENTREGABLES.md). La ISO, el disco virtual y la contraseña **no se suben** al repositorio.
 

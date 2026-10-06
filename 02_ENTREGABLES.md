@@ -15,7 +15,14 @@
 
 ## FASE 0 — UNA ENTRADA, CUATRO VÍDEOS Y UNA ENTREGA
 
-La [Fase 0](fase-0-preparar-laboratorio/README.md) se entrega **al terminar F0.4**. Abre antes de F0.1 una única nota: `00_Apuntes/Trimestre_1/B0_Curso_Shell/shell-0-preparacion-del-laboratorio.md`. Complétala después de cada práctica; no la reconstruyas al final de memoria.
+La [Fase 0](fase-0-preparar-laboratorio/README.md) se entrega **al terminar F0.4**. Abre antes de F0.1 una única nota: `Boveda_SOR/00_Apuntes/Trimestre_1/B0_Curso_Shell/shell-0-preparacion-del-laboratorio.md`. Complétala después de cada práctica; no la reconstruyas al final de memoria.
+
+**Crea y prepara esa nota antes de F0.1:**
+
+1. Abre `Boveda_SOR` en Obsidian y entra en la carpeta `00_Apuntes/Trimestre_1/B0_Curso_Shell` que preparaste en [Antes de empezar](01_ANTES_DE_EMPEZAR.md).
+2. Crea allí una nota nueva con el nombre `shell-0-preparacion-del-laboratorio`. Comprueba que el archivo termina en `.md` y queda **dentro de `00_Apuntes`**, no dentro de `01_Practicas`.
+3. Copia **el contenido del bloque de plantilla** que aparece más abajo, desde `# Fase 0` hasta la última línea, y pégalo en esa nota. No copies las dos líneas que abren y cierran el bloque de código.
+4. Comprueba que aparecen cuatro títulos: `F0.1 · ISO`, `F0.2 · Máquina virtual`, `F0.3 · Instalación` y `F0.4 · SSH y punto de control`. Son **cuatro apartados de una sola nota**; no son cuatro archivos diferentes.
 
 | Práctica | Vídeo en `B0_Curso_Shell` · «No listado» | Puntos |
 | :--- | :--- | ---: |
@@ -42,7 +49,7 @@ Usa esta estructura para la entrada común:
 Fuente oficial, versión y nombre del archivo; URL de SHA256SUMS;
 SHA256 oficial y calculado; comparación y decisión.
 Vídeo:
-Respuestas (lee las preguntas en F0.1 y escribe tu explicación después de cada número):
+Respuestas (lee las preguntas de la práctica F0.1 y explica cada una):
 F0.1.1:
 F0.1.2:
 F0.1.3:
@@ -50,10 +57,22 @@ F0.1.4:
 F0.1.5:
 
 ## F0.2 · Máquina virtual
-Arquitectura, RAM y espacio medidos; recursos elegidos y justificación;
-manual frente a desatendida; ubicación del disco; NAT.
+### Recursos del ordenador y de ShellLab
+| Dato | Valor real | Dónde lo comprobé o por qué lo elegí |
+| :--- | :--- | :--- |
+| Tipo de sistema de Windows | | |
+| RAM instalada | | |
+| RAM para ShellLab | | |
+| RAM que quedará para Windows | | |
+| Procesadores para ShellLab | | |
+| Espacio libre en la unidad de la VM | | |
+| Tamaño máximo del disco virtual | | |
+
+Instalación manual frente a desatendida: decisión y motivo.
+Ubicación de la VM y del disco virtual: carpeta real de Windows.
+Red: ajuste del Adaptador 1 y motivo.
 Vídeo:
-Respuestas (lee las preguntas en F0.2):
+Respuestas (lee las preguntas de la práctica F0.2):
 F0.2.1:
 F0.2.2:
 F0.2.3:
@@ -64,7 +83,7 @@ F0.2.5:
 Decisiones de teclado, red, disco virtual, cuenta y OpenSSH;
 resultado de whoami, hostname e ip -br address.
 Vídeo:
-Respuestas (lee las preguntas en F0.3):
+Respuestas (lee las preguntas de la práctica F0.3):
 F0.3.1:
 F0.3.2:
 F0.3.3:
@@ -76,7 +95,7 @@ Regla NAT, puerto real, prueba de huella y conexión;
 resultado de whoami, hostname, pwd y exit;
 nombre de la instantánea y comprobación.
 Vídeo:
-Respuestas (lee las preguntas en F0.4):
+Respuestas (lee las preguntas de la práctica F0.4):
 F0.4.1:
 F0.4.2:
 F0.4.3:
