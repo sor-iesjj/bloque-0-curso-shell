@@ -89,12 +89,19 @@
 | Evidencia en vídeo y apuntes | Puntos |
 | :--- | ---: |
 | Arranque, teclado comprobado y Ubuntu Server elegido | 4 |
-| Red por DHCP y disco **virtual** identificado antes de aceptar | 6 |
-| Usuario `marko`, servidor `shelllab`, contraseña no publicada | 5 |
-| OpenSSH seleccionado o instalado tras comprobar que faltaba | 6 |
-| Primer arranque y tres comandos ejecutados y explicados | 4 |
+| Red por DHCP y disco **virtual** identificado antes de aceptar | 5 |
+| Usuario `marko`, servidor `shelllab`, contraseña no publicada | 4 |
+| OpenSSH seleccionado o instalado tras comprobar que faltaba | 5 |
+| Primer arranque y tres comandos ejecutados y explicados | 2 |
+| Respuestas 1–5 en F0.3: un punto por respuesta correcta y explicada | 5 |
 
-> [!question] Responde en F0.3 con tus palabras
-> ¿Qué disco usaste y cómo sabes que era el virtual? ¿Para qué seleccionaste OpenSSH? ¿Qué comprueba cada uno de los tres comandos del primer arranque?
+> [!question] F0.3 · Responde las cinco preguntas en tu entrada de apuntes
+> Escribe «F0.3.1» a «F0.3.5» y contesta con tus palabras y con lo que viste durante la instalación.
+>
+> 1. **F0.3.1.** ¿Por qué probaste la tecla `@` antes de crear la contraseña? ¿Qué error podrías evitar así?
+> 2. **F0.3.2.** ¿Quién asigna automáticamente la dirección de red a la VM en esta práctica? ¿Por qué no escribiste una IP fija?
+> 3. **F0.3.3.** Antes de aceptar «usar el disco completo», ¿cómo comprobaste que era el disco virtual de `ShellLab`? ¿Qué harías si aparecieran varios discos?
+> 4. **F0.3.4.** ¿Para qué instalaste OpenSSH Server? ¿Qué diferencia hay entre el usuario `marko` y el nombre de equipo `shelllab`?
+> 5. **F0.3.5.** ¿Qué comprueba cada uno de estos comandos ejecutados en Ubuntu: `whoami`, `hostname` e `ip -br address`? Anota también lo que mostró tu VM, sin incluir contraseñas.
 
 **Siguiente:** [F0.4 · Conecta por SSH](F0-04_SSH.md). · [Índice de Fase 0](README.md)

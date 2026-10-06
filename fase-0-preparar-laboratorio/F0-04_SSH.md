@@ -105,7 +105,7 @@
 
 > [!example] Paso 7 — Cierra el vídeo y entrega (**WINDOWS, repositorio de apuntes**)
 > - **7A.** Detén OBS. Sube el vídeo con el título **`B0.S.0.4 · Marko entra por SSH`** a la playlist **`B0_Curso_Shell`**, como **«No listado»**. Añade `00:00 Presentación` y una marca por cada paso en la descripción.
-> - **7B.** Pega en F0.4 el enlace de este vídeo. Comprueba que la entrada común tiene **los cuatro enlaces**, las respuestas y las evidencias de F0.1 a F0.4. No incluyas contraseñas, claves privadas, ISO ni discos virtuales.
+> - **7B.** Pega en F0.4 el enlace de este vídeo. Comprueba que la entrada común tiene **los cuatro enlaces, las 20 respuestas numeradas** y las evidencias de F0.1 a F0.4. No incluyas contraseñas, claves privadas, ISO ni discos virtuales.
 > - **7C.** En el Explorador de Windows entra en `Boveda_SOR/00_Apuntes/Trimestre_1`, que es la raíz de tu repositorio `apuntes-sor-t1`. Abre **Git Bash en esa carpeta**, como ya aprendiste en el curso de Git. Antes de subir, ejecuta:
 >
 > ```bash
@@ -134,13 +134,20 @@
 
 | Evidencia en vídeo y apuntes | Puntos |
 | :--- | ---: |
-| Cliente y servidor comprobados; `:22` identificado | 5 |
-| Regla NAT con anfitrión `127.0.0.1` y puertos anotados | 8 |
-| Huella contrastada y conexión SSH con contraseña | 7 |
-| `whoami`, `hostname`, `pwd` y `exit` ejecutados y explicados | 5 |
+| Cliente y servidor comprobados; `:22` identificado | 4 |
+| Regla NAT con anfitrión `127.0.0.1` y puertos anotados | 7 |
+| Huella contrastada y conexión SSH con contraseña | 6 |
+| `whoami`, `hostname`, `pwd` y `exit` ejecutados y explicados | 3 |
 | Instantánea visible y entrada completa comprobada en GitHub | 5 |
+| Respuestas 1–5 en F0.4: un punto por respuesta correcta y explicada | 5 |
 
-> [!question] Responde en F0.4 con tus palabras
-> ¿Cómo sabes cuándo Git Bash está trabajando en Ubuntu y cuándo en Windows? ¿Por qué escribiste `127.0.0.1` y `-p 2222`? ¿Qué no guarda la instantánea?
+> [!question] F0.4 · Responde las cinco preguntas en tu entrada de apuntes
+> Escribe «F0.4.1» a «F0.4.5» y contesta con tus palabras. Si cambiaste el puerto `2222`, usa en la respuesta el puerto que anotaste de verdad.
+>
+> 1. **F0.4.1.** ¿Dónde se ejecuta `ssh -V` antes de conectar? Después de entrar por SSH, ¿dónde se ejecutan `whoami` y `pwd`, aunque uses la misma ventana de Git Bash?
+> 2. **F0.4.2.** En `ssh -p 2222 marko@127.0.0.1`, ¿qué significan `marko`, `127.0.0.1` y `2222`? ¿Qué puerto recibe la conexión dentro de Ubuntu?
+> 3. **F0.4.3.** ¿Qué valores pusiste en «IP anfitrión» e «IP invitado» de la regla NAT? Explica por qué los pusiste así.
+> 4. **F0.4.4.** En la primera conexión, ¿cómo comprobaste la huella antes de escribir `yes`? ¿Qué harías si no coincidiera o cambiara después?
+> 5. **F0.4.5.** ¿Qué demuestra `exit`? ¿Qué conserva la instantánea `ShellLab - SSH operativo` y qué entregables quedan fuera de ella?
 
 **Siguiente:** [Fase 1 · La terminal y los ficheros](../fase-1-terminal-y-ficheros/README.md). · [Índice de Fase 0](README.md)

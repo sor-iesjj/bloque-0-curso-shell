@@ -67,12 +67,19 @@
 
 | Evidencia que debe verse en vídeo y apuntes | Puntos |
 | :--- | ---: |
-| Página oficial, versión, carpeta y nombre real de la ISO | 5 |
-| Línea correcta del `SHA256SUMS` de esa versión | 5 |
-| Comando de PowerShell ejecutado sobre el archivo correcto y valor `Hash` anotado | 8 |
+| Página oficial, versión, carpeta y nombre real de la ISO | 3 |
+| Línea correcta del `SHA256SUMS` de esa versión | 4 |
+| Comando de PowerShell o alternativa de Git Bash ejecutado sobre el archivo correcto y valor de la huella anotado | 6 |
 | Comparación completa, decisión y explicación de qué hacer si falla | 2 |
+| Respuestas 1–5 en F0.1: un punto por respuesta correcta y explicada | 5 |
 
-> [!question] Responde en F0.1 con tus palabras
-> ¿Por qué importa que la línea de `SHA256SUMS` nombre tu archivo exacto? ¿Qué demuestra una coincidencia de huellas y qué harías si no coincidieran?
+> [!question] F0.1 · Responde las cinco preguntas en tu entrada de apuntes
+> Escribe «F0.1.1» a «F0.1.5» y contesta con tus palabras después de hacer la comprobación. No copies el enunciado como respuesta.
+>
+> 1. **F0.1.1.** ¿Qué es un archivo ISO, dónde lo guardaste y para qué lo usarás en esta fase?
+> 2. **F0.1.2.** ¿Qué contiene `SHA256SUMS` y por qué has elegido la línea que nombra exactamente tu archivo?
+> 3. **F0.1.3.** ¿Qué comando utilizaste en Windows para calcular la huella de tu ISO? Explica qué archivo leyó y dónde viste el resultado. Si usaste Git Bash porque PowerShell estaba bloqueado, indica el comando que realmente ejecutaste.
+> 4. **F0.1.4.** ¿Qué significa que coincidan las dos huellas? ¿Qué aspecto no demuestra esta comparación por sí sola?
+> 5. **F0.1.5.** Si las huellas no coinciden, ¿qué compruebas primero y qué haces antes de pasar a F0.2?
 
 **Siguiente:** [F0.2 · Crea la VM](F0-02_VM.md). · [Índice de Fase 0](README.md)

@@ -24,7 +24,7 @@ La [Fase 0](fase-0-preparar-laboratorio/README.md) se entrega **al terminar F0.4
 | F0.3 | `B0.S.0.3 · Marko instala Ubuntu Server` | 25 |
 | F0.4 | `B0.S.0.4 · Marko entra por SSH` | 30 |
 
-**Total: 100 puntos.** La tabla concreta de cada práctica está en su procedimiento. En cada vídeo: presentación e identidad, proceso grabado, `00:00 Presentación` y una marca por paso en la descripción. No publiques contraseñas, claves privadas, ISO ni disco virtual. En la nota van las medidas y decisiones reales, las comprobaciones y los cuatro enlaces. La instantánea se demuestra en vídeo; **no se sube** al repositorio.
+**Total: 100 puntos.** Cada práctica reserva 5 puntos para cinco preguntas numeradas: **20 respuestas** en la única nota, valoradas con un punto cada una. La tabla concreta de cada práctica está en su procedimiento. En cada vídeo: presentación e identidad, proceso grabado, `00:00 Presentación` y una marca por paso en la descripción. No publiques contraseñas, claves privadas, ISO ni disco virtual. En la nota van las medidas y decisiones reales, las comprobaciones, los cuatro enlaces y las respuestas. La instantánea se demuestra en vídeo; **no se sube** al repositorio.
 
 Usa esta estructura para la entrada común:
 
@@ -40,24 +40,48 @@ Usa esta estructura para la entrada común:
 
 ## F0.1 · ISO
 Fuente oficial, versión y nombre del archivo; URL de SHA256SUMS;
-SHA256 oficial y calculado; comparación y respuesta a las preguntas.
+SHA256 oficial y calculado; comparación y decisión.
 Vídeo:
+Respuestas (lee las preguntas en F0.1 y escribe tu explicación después de cada número):
+F0.1.1:
+F0.1.2:
+F0.1.3:
+F0.1.4:
+F0.1.5:
 
 ## F0.2 · Máquina virtual
 Arquitectura, RAM y espacio medidos; recursos elegidos y justificación;
-manual frente a desatendida; ubicación del disco; NAT; respuestas.
+manual frente a desatendida; ubicación del disco; NAT.
 Vídeo:
+Respuestas (lee las preguntas en F0.2):
+F0.2.1:
+F0.2.2:
+F0.2.3:
+F0.2.4:
+F0.2.5:
 
 ## F0.3 · Instalación
 Decisiones de teclado, red, disco virtual, cuenta y OpenSSH;
-resultado de whoami, hostname e ip -br address; respuestas.
+resultado de whoami, hostname e ip -br address.
 Vídeo:
+Respuestas (lee las preguntas en F0.3):
+F0.3.1:
+F0.3.2:
+F0.3.3:
+F0.3.4:
+F0.3.5:
 
 ## F0.4 · SSH y punto de control
 Regla NAT, puerto real, prueba de huella y conexión;
 resultado de whoami, hostname, pwd y exit;
-nombre de la instantánea y comprobación; respuestas.
+nombre de la instantánea y comprobación.
 Vídeo:
+Respuestas (lee las preguntas en F0.4):
+F0.4.1:
+F0.4.2:
+F0.4.3:
+F0.4.4:
+F0.4.5:
 
 ## Fallos y solución
 Mensaje literal, dónde apareció y cómo lo resolví; si no hubo fallos,
@@ -67,7 +91,7 @@ indico qué comprobé para saber que funcionaba.
 Explicación propia; no copiar el procedimiento.
 ```
 
-Desde la raíz de **`apuntes-sor-t1`**, después de completar F0.4, prepara **solo** `B0_Curso_Shell/shell-0-preparacion-del-laboratorio.md`, revisa con `git diff --cached --stat`, haz un `commit`, `push` y comprueba la nota en GitHub. Entrega en Teams el enlace al repositorio. Los comandos exactos están en [F0.4, Paso 7](fase-0-preparar-laboratorio/F0-04_SSH.md).
+Antes de subir, comprueba en la nota que aparecen los cuatro enlaces y las 20 respuestas con sus números, de F0.1.1 a F0.4.5. Si una prueba falló, explica qué observaste en lugar de inventar un resultado. Desde la raíz de **`apuntes-sor-t1`**, después de completar F0.4, prepara **solo** `B0_Curso_Shell/shell-0-preparacion-del-laboratorio.md`, revisa con `git diff --cached --stat`, haz un `commit`, `push` y comprueba la nota en GitHub. Entrega en Teams el enlace al repositorio. Los comandos exactos están en [F0.4, Paso 7](fase-0-preparar-laboratorio/F0-04_SSH.md).
 
 ## **1 · LOS TRES ENTREGABLES DE CADA EJERCICIO DESDE LA FASE 1**
 
