@@ -40,11 +40,11 @@ Los mismos del [curso de Git](../02_Curso_Git/README.md):
 
 ---
 
-## Entorno: una VM con Ubuntu **Desktop**
+## Entorno: una VM con Ubuntu **Server** y SSH
 
-Todo el curso se hace en una **máquina virtual con Ubuntu Desktop** sobre VirtualBox. La montas tú en el primer ejercicio (`EJ-01-01-01`).
+Todo el curso se hace en la **máquina virtual `ShellLab` con Ubuntu Server**. La preparas en la [Fase 0](fase-0-preparar-laboratorio/README.md) y te conectas desde Git Bash por SSH. Es independiente del servidor Boochan y de `Boveda_SOR`.
 
-**Desktop y no Server, a propósito:** todavía no estás administrando un servidor, estás aprendiendo a hablar con el sistema. Tener navegador y escritorio al lado te quita fricción. El Server llega en el Bloque 2.
+Esta instalación es introductoria: el **Bloque 1** estudia con más detalle las ISO, la compatibilidad, la virtualización y la instalación. Aquí configuramos solo lo imprescindible para practicar Shell, sin tocar la red física del centro ni adelantar la red de Boochan.
 
 > [!warning] La instantánea no es opcional
 > Vas a provocar averías reales: un `fstab` roto que deja la máquina en modo emergencia, permisos que se cargan un acceso, ficheros que desaparecen. **Todo eso es el ejercicio, no un accidente.** Por eso el curso te hace tomar instantáneas de VirtualBox antes de cada operación de riesgo. Hazlas.
@@ -53,7 +53,7 @@ Todo el curso se hace en una **máquina virtual con Ubuntu Desktop** sobre Virtu
 
 ## Cómo está montado el curso
 
-**Siete fases**, cada una con una idea central. La numeración de los ejercicios es `EJ-0F-NN-MM` = **fase · nivel · número**, igual que en el curso de Git.
+**Una Fase 0 de preparación y siete fases de ejercicios**. La Fase 0 tiene cuatro prácticas `F0.1` a `F0.4`, una entrada y cuatro vídeos. Desde la Fase 1, la numeración de los ejercicios es `EJ-0F-NN-MM` = **fase · nivel · número**, igual que en el curso de Git.
 
 ### Los cinco niveles
 
@@ -72,16 +72,17 @@ Los **retos N5** son la parte que de verdad evalúa: no traen pasos numerados, t
 ## Índice de fases
 
 > [!danger] 🛑 EMPIEZA POR AQUÍ: **[🐧 Índice general del curso](00_INDICE.md)**
-> Ahí tienes el mapa completo: las siete fases, cómo funciona cada ejercicio y **los tres pasos previos que hay que dar antes de la Fase 1**.
+> Ahí tienes el mapa completo: la Fase 0, las siete fases de ejercicios y cómo funciona cada entrega.
 >
-> Y esos tres pasos, por orden:
+> Sigue este orden:
 > 1. **[🛠️ Antes de empezar](01_ANTES_DE_EMPEZAR.md)** — traer el curso a tu ordenador y dejar listo dónde guardas todo. **15 minutos.**
 > 2. **[📦 Entregables](02_ENTREGABLES.md)** — qué se entrega, cómo se llama y cómo se sube. **5 minutos.**
-> 3. Y ya sí, la [Fase 1](fase-1-terminal-y-ficheros/README.md).
+> 3. **[Fase 0 · Prepara el laboratorio](fase-0-preparar-laboratorio/README.md)** — ISO, VirtualBox, Ubuntu Server, SSH e instantánea; se evalúa y se entrega.
+> 4. [Fase 1](fase-1-terminal-y-ficheros/README.md) — empieza con la VM ya operativa.
 >
 > Ahí está **dónde van tus apuntes, cómo se llama cada entrada, qué lleva dentro y cómo se sube**. Y hay una razón para leerlo ahora y no luego:
 >
-> **Cada ejercicio produce TRES entregables** —una entrada de apuntes, un vídeo y el `push` que la sube—, y **la entrada se abre al empezar el ejercicio, no al terminarlo**.
+> **La Fase 0** produce una entrada común, cuatro vídeos y un `push` al cierre. **Desde la Fase 1**, cada ejercicio produce una entrada, un vídeo y el `push` que la sube. La entrada se abre al empezar, no al terminar.
 >
 > Si te pones a hacer ejercicios y dejas los apuntes para el final, o los escribes de memoria —y se nota— o los pierdes. Las dos cosas cuentan como **no entregado**.
 
@@ -89,6 +90,7 @@ Los **retos N5** son la parte que de verdad evalúa: no traen pasos numerados, t
 
 | Fase | Carpeta | Idea central | Aterriza en |
 | :--- | :--- | :--- | :--- |
+| **0** | [fase-0-preparar-laboratorio](fase-0-preparar-laboratorio/README.md) | Crear `ShellLab`, instalar Server y entrar por SSH | Inicio de Shell; introducción a B1 |
 | **1** | [fase-1-terminal-y-ficheros](fase-1-terminal-y-ficheros/README.md) | Saber dónde estás y moverte sin miedo | Todo el itinerario |
 | **2** | [fase-2-identidad-y-permisos](fase-2-identidad-y-permisos/README.md) | Quién eres y qué puedes hacer | Boochan **F5 y F6** |
 | **3** | [fase-3-tuberias-y-texto](fase-3-tuberias-y-texto/README.md) | Encadenar comandos y preguntar lo que quieres saber | Las verificaciones de **todas** las fases |
@@ -97,7 +99,7 @@ Los **retos N5** son la parte que de verdad evalúa: no traen pasos numerados, t
 | **6** | [fase-6-acl](fase-6-acl/README.md) | Cuando tres casillas de permisos no llegan | Boochan **F7** |
 | **7** | [fase-7-scripts](fase-7-scripts/README.md) | Leer el bash que hasta ahora era magia negra | Los `verificar_faseN.sh` |
 
-**65 ejercicios** en total, más siete cierres de fase.
+**Cuatro prácticas de Fase 0**, más **65 ejercicios** y siete cierres de las fases 1–7.
 
 ### Por qué estas siete fases y no otras
 

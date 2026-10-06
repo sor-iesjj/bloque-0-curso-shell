@@ -2,13 +2,13 @@
 
 > **Módulo:** SOR — Sistemas Operativos en Red · **Bloque 0 · Curso de Shell**
 >
-> **📍 Cuándo se lee:** **AHORA.** Antes de la Fase 1 y antes de encender ninguna máquina.
+> **📍 Cuándo se lee:** **AHORA.** Antes de la Fase 0 y antes de encender ninguna máquina.
 >
 > **⏱️ Te lleva:** unos 15 minutos.
 
 ---
 
-> [!danger] 🛑 No abras la Fase 1 sin haber hecho esto
+> [!danger] 🛑 No abras la Fase 0 sin haber hecho esto
 > Aquí dejas listas **las tres cosas** que vas a necesitar durante todo el curso: **el material**, **tu cuaderno** y **dónde se guarda todo**.
 >
 > Si empiezas sin esto, en el primer ejercicio te van a pedir que guardes una entrada y que hagas un `push`… **y no vas a tener ni dónde ni a dónde.**
@@ -33,15 +33,15 @@ Este curso **no empieza de cero**. Das por hecho que ya tienes:
 
 ## **2 · LOS TRES LUGARES DE TRABAJO**
 
-**No hagas prácticas de Shell en la terminal de tu ordenador.** En este curso hay dos ordenadores: el que tienes delante (anfitrión) y el Ubuntu que crearás dentro de VirtualBox (máquina virtual o **VM**). La VM se llamará `ShellLab`.
+**No hagas las prácticas Linux en el Git Bash local de tu ordenador.** Hay dos ordenadores: el anfitrión y Ubuntu Server en VirtualBox (`ShellLab`). Tras la Fase 0, **abres Git Bash en Windows y conectas por SSH**: desde ese momento los comandos que tecleas actúan en Ubuntu hasta que salgas con `exit`.
 
 | Lugar | Qué haces ahí | Qué no haces ahí |
 | :--- | :--- | :--- |
 | Tu ordenador · `Boveda_SOR/01_Practicas/B0_Curso_Shell/` | Lees los enunciados. | Ejecutar los comandos que modifican usuarios, permisos, discos o servicios. |
-| VM `ShellLab` | Ejecutas los comandos y creas los archivos de prueba. | Abrir o modificar `Boveda_SOR`. |
+| VM `ShellLab` a través de SSH | Ejecutas los comandos Linux y creas los archivos de prueba. | Abrir o modificar `Boveda_SOR`. |
 | Tu ordenador · `Boveda_SOR/00_Apuntes/Trimestre_1/B0_Curso_Shell/` | Escribes tu entrada y guardas una **copia revisada** de los archivos que haya que entregar. | Romper cosas para ver qué pasa. |
 
-En el **primer ejercicio** crearás también `Intercambio_Shell` **fuera de `Boveda_SOR`**. Será una bandeja para copiar archivos terminados de la VM al ordenador. Nunca se comparte la bóveda entera con la VM. La ubicación y la prueba paso a paso están en [`EJ-01-01-01`](fase-1-terminal-y-ficheros/EJ-01-01-01.md); todavía no necesitas esa carpeta para descargar el curso.
+La [Fase 0](fase-0-preparar-laboratorio/README.md) prepara la conexión SSH sin compartir carpetas de VirtualBox. Cuando una práctica posterior produzca un archivo que debas entregar, cópialo desde Ubuntu a una carpeta temporal **fuera de `Boveda_SOR`** mediante `scp`, revísalo y luego guárdalo en tus apuntes. La primera práctica lo enseña. Nunca se comparte la bóveda entera con la VM.
 
 ### Así queda tu bóveda
 
@@ -124,7 +124,7 @@ ls
 >
 > **Dentro de tu bóveda, una cosa tiene un nombre y solo uno.** Tus apuntes del curso están en `B0_Curso_Shell`, la práctica está en `B0_Curso_Shell`, y tu playlist se llama `B0_Curso_Shell`. Cuando yo diga *"esto es del Curso de Shell"*, no hay nada que traducir.
 
-- **✅ Bien:** el `ls` te muestra `00_INDICE.md`, `01_ANTES_DE_EMPEZAR.md`, `02_ENTREGABLES.md` y las siete carpetas `fase-…`.
+- **✅ Bien:** el `ls` te muestra `00_INDICE.md`, `01_ANTES_DE_EMPEZAR.md`, `02_ENTREGABLES.md`, la carpeta `fase-0-preparar-laboratorio` y las siete carpetas siguientes.
 - **❌ Mal:** *"Permission denied (publickey)"* → tu SSH no está configurado. Vuelve a la **Fase 0.2.2**.
 
 ---
@@ -175,7 +175,7 @@ git push
 **Ahora abre `github.com/TU-USUARIO/apuntes-sor-t1` en el navegador.**
 
 - **✅ Bien:** ves la carpeta `B0_Curso_Shell` con `prueba.md` dentro.
-- **❌ Mal:** si el `push` da error, **arréglalo hoy**. Es el mismo problema que tendrás en los 65 ejercicios.
+- **❌ Mal:** si el `push` da error, **arréglalo hoy**. Lo necesitarás desde la entrega de la Fase 0.
 
 **Y ahora borra solo ese fichero de prueba**, que ya ha cumplido. Comprueba primero que la terminal sigue en `Trimestre_1`:
 
@@ -204,11 +204,12 @@ A partir de ahora, en cada ejercicio:
 1. Abres el ejercicio en   01_Practicas/B0_Curso_Shell/fase-N-…/EJ-….md
 2. Abres tu entrada en     00_Apuntes/Trimestre_1/B0_Curso_Shell/shell-….md
    (el nombre te lo da el propio ejercicio, en su Paso 0)
-3. Grabas con OBS y haces las pruebas dentro de ShellLab
-4. Si hay un archivo que entregar, lo copias por Intercambio_Shell y compruebas la copia en tu ordenador
-5. Escribes tus apuntes MIENTRAS trabajas, no al final
-6. Subes el vídeo y pegas su enlace en la entrada
-7. Desde Trimestre_1: compruebas la ruta → git add → revisas → git commit → git push
+3. Arrancas ShellLab, abres Git Bash, conectas por SSH y compruebas `whoami` y `hostname`
+4. Grabas con OBS y haces las pruebas dentro de la sesión SSH de ShellLab
+5. Si hay un archivo que entregar, lo copias con `scp` a una carpeta temporal fuera de la bóveda y compruebas la copia
+6. Escribes tus apuntes MIENTRAS trabajas, no al final
+7. Subes el vídeo y pegas su enlace en la entrada
+8. Desde Trimestre_1: compruebas la ruta → git add → revisas → git commit → git push
 ```
 
 > [!important] 📌 Sigue este orden en cada ejercicio
@@ -216,7 +217,7 @@ A partir de ahora, en cada ejercicio:
 
 ---
 
-## ✅ **CHECKLIST — no pases a la Fase 1 sin esto**
+## ✅ **CHECKLIST — antes de empezar la Fase 0**
 
 - [ ] Tengo mi copia del curso en GitHub *(botón `Use this template`)*.
 - [ ] La he clonado en `01_Practicas/B0_Curso_Shell/` y el `ls` muestra las siete fases.

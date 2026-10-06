@@ -17,29 +17,31 @@ Este curso te enseña esos comandos **antes** de que los necesites, para que cua
 
 ---
 
-## **2 · 🛑 LOS TRES PASOS PREVIOS — NO TE LOS SALTES**
+## **2 · 🛑 EMPIEZA POR LA FASE 0**
 
-**Antes de abrir la Fase 1**, en este orden:
+**Antes de abrir la Fase 1**, sigue este orden:
 
 | # | Qué | Dónde está explicado |
 | :--- | :--- | :--- |
 | **1** | **Prepara tu sitio de trabajo:** descarga este curso y deja listo dónde vas a guardar todo | **[🛠️ Antes de empezar](01_ANTES_DE_EMPEZAR.md)** |
 | **2** | **Entérate de qué tienes que entregar** y cómo se llaman tus ficheros | **[📦 Entregables](02_ENTREGABLES.md)** |
-| **3** | **Empieza la Fase 1** | [Fase 1](fase-1-terminal-y-ficheros/README.md) |
+| **3** | **Prepara `ShellLab`:** ISO, VM, Ubuntu Server y SSH | **[Fase 0](fase-0-preparar-laboratorio/README.md)** |
+| **4** | **Empieza la Fase 1** con la conexión SSH comprobada | [Fase 1](fase-1-terminal-y-ficheros/README.md) |
 
 > [!danger] 🛑 Si te saltas el paso 1, no tendrás dónde guardar el trabajo
 > Y si te saltas el 2, escribirás los apuntes al final de memoria — que **cuenta como no entregado**.
 >
-> Son **veinte minutos** entre los dos. Te ahorran el curso entero.
+> La Fase 0 es trabajo práctico evaluable; reserva el tiempo que requiera tu equipo y documenta los problemas reales.
 
 ---
 
-## **3 · LAS SIETE FASES**
+## **3 · FASE 0 Y SIETE FASES DE EJERCICIOS**
 
 Cada fase tiene **su propio índice** con sus ejercicios ordenados por dificultad. Entra en la que toque:
 
 | # | Fase | La idea central | Ejercicios | Dónde te va a servir |
 | :--- | :--- | :--- | :---: | :--- |
+| **0** | **[Prepara el laboratorio](fase-0-preparar-laboratorio/README.md)** | ISO verificada, Ubuntu Server y acceso SSH desde Git Bash | 4 prácticas | Introducción al Bloque 1 y base del curso |
 | **1** | **[La terminal y el árbol de ficheros](fase-1-terminal-y-ficheros/README.md)** | Saber dónde estás y moverte sin miedo | 9 | En todo el curso |
 | **2** | **[Identidad y permisos](fase-2-identidad-y-permisos/README.md)** | Quién eres y qué puedes hacer | 11 | Boochan **F5 y F6** |
 | **3** | **[Tuberías y texto](fase-3-tuberias-y-texto/README.md)** | Encadenar comandos y preguntarle cosas al sistema | 9 | Las **verificaciones** de todas las fases |
@@ -84,7 +86,9 @@ Todos siguen la misma estructura, así que en cuanto hagas dos ya sabes dónde e
 
 ## **5 · LO QUE ENTREGAS**
 
-**Cada ejercicio son tres cosas**, y las tres van juntas:
+**La Fase 0** entrega **una entrada común, cuatro vídeos y un `push` de cierre**, con [rúbrica propia](02_ENTREGABLES.md#fase-0--una-entrada-cuatro-vídeos-y-una-entrega).
+
+**Desde la Fase 1**, cada ejercicio son tres cosas, y las tres van juntas:
 
 | | |
 | :--- | :--- |
@@ -98,7 +102,7 @@ El detalle completo —ruta, nombres, plantilla copiable y cómo se entrega— e
 
 ## **6 · CUÁNTO TIEMPO LLEVA**
 
-**~16 horas** en total, repartidas en varias semanas. No es una asignatura aparte: es **el terreno que hay que preparar** antes de tocar el servidor.
+Las fases 1–7 estaban planificadas como trabajo distribuido en varias semanas. **La Fase 0 añade la preparación de la VM**; su duración depende de la descarga, la instalación y los recursos del equipo. No se presupone un tiempo fijo.
 
 Yo te diré **qué fases toca hacer y cuándo**. No hace falta que te las hagas todas seguidas.
 
