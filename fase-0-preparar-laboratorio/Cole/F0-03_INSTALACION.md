@@ -5,7 +5,7 @@
 > **SOR · Curso de Shell · Fase 0** · **RA.01 · CE.01.e (introducción)**
 > **Dónde:** ventana de la **VM** `ShellLab_Cole` en VirtualBox; todavía no se usa SSH.
 
-> **Teams:** `00.03.00.F003` · Guion de práctica para COLE; la entrega es la Fase 0 completa.
+> **Canal Teams:** `00.03.00.F003` · Publicación del guion y su PDF. La tarea independiente de entrega cubre Fase 0 completa para COLE.
 > **Vídeo:** `B0.S.F0 · Marko prepara el laboratorio Shell · COLE` · **Playlist:** `B0_Curso_Shell_F0_Cole` · **Vídeo final de Fase 0** · **25 puntos**.
 
 > [!info] Encargo de Lucía
@@ -19,13 +19,15 @@
 - **OpenSSH Server:** programa de Ubuntu que acepta conexiones SSH. En F0.4 Git Bash será el cliente que se conectará a este servidor. Seleccionarlo es la evidencia inicial de **CE.01.e**.
 - **Usuario y contraseña:** la cuenta `marko` servirá para entrar en Ubuntu. El nombre se puede mostrar en la grabación; **la contraseña nunca se dice, escribe en apuntes ni publica**.
 
+Antes de instalar, consulta la [guía oficial de instalación básica de Ubuntu Server](https://ubuntu.com/server/docs/tutorial/basic-installation/). Esta práctica usa Ubuntu Server 24.04 LTS amd64 en un disco virtual nuevo. Las pantallas pueden variar; si una pantalla propone elegir otro disco o no entiendes qué va a borrar, detente y consulta al profesor.
+
 ## Antes de grabar
 
 1. Lee **todos** los pasos, hasta la tabla de comprobación. Identifica las pantallas donde elegirás disco, usuario y OpenSSH.
 2. Confirma en VirtualBox que la VM se llama `ShellLab_Cole`, que su Adaptador 1 está en NAT y que lleva la ISO cuya huella coincidió en F0.1.
 3. En Obsidian abre la misma nota de apuntes que usaste en F0.1 y F0.2: `Boveda_Shell_Cole/Apuntes_Shell_Cole/Fase_0/shell-0-preparacion-del-laboratorio-cole.md`.
 4. Dentro de esa nota localiza **«F0.3 · Instalación»**. Ahí anotarás lo que ocurra en esta práctica. Si no aparece, vuelve al apartado «Prepara tu nota Fase 0» del [índice de este recorrido](README.md) antes de grabar.
-5. Ten OBS y tu identificación preparados. Guarda este tramo para el único vídeo final de Fase 0. No lo subas todavía; al terminar F0.4 publicarás el vídeo final en `B0_Curso_Shell_F0_Cole`.
+5. Ten OBS y tu identificación preparados. Graba este tramo para el único vídeo final de Fase 0. No lo subas todavía; al terminar F0.4 publicarás el vídeo final en `B0_Curso_Shell_F0_Cole`.
 
 ## Procedimiento
 
@@ -71,10 +73,16 @@
 > ip -br address
 > ```
 >
-> - **6D.** `whoami` responde quién ha iniciado la sesión; debe corresponder a `marko`. `hostname` muestra el nombre del equipo; debe corresponder a `shelllab-cole`. `ip -br address` resume las conexiones de red y sus direcciones: anota si el adaptador NAT recibió una dirección. **No copies esa dirección en el comando SSH**: F0.4 enseñará cómo llegar desde Windows sin depender de ella.
+> - **6D.** Explicación línea por línea: **Línea 1 (`whoami`)** muestra la cuenta activa y debe ser `marko`; **línea 2 (`hostname`)** muestra el nombre del equipo y debe ser `shelllab-cole`; **línea 3 (`ip -br address`)** resume interfaces y direcciones y permite anotar si NAT asignó una dirección. **No copies esa dirección en el comando SSH**: F0.4 enseña cómo llegar desde Windows sin depender de ella.
 
 > [!example] Paso 7 — Si olvidaste OpenSSH, corrígelo (**VM**, solo si hace falta)
-> - **7A.** Comprueba si está instalado con `dpkg-query -W openssh-server`. Ese comando pregunta a Ubuntu por un paquete; no cambia nada.
+> - **7A.** Comprueba si el paquete está instalado. Ejecuta en la consola de Ubuntu:
+>
+> ```bash
+> dpkg-query -W openssh-server
+> ```
+>
+> **Línea 1:** pregunta al gestor de paquetes si `openssh-server` está instalado; no modifica el sistema. Si no aparece como instalado, continúa con 7B solo si Ubuntu tiene salida a Internet.
 > - **7B.** Si dice que el paquete no existe, y Ubuntu tiene salida a Internet, ejecuta **uno por uno**:
 >
 > ```bash
@@ -82,12 +90,12 @@
 > sudo apt install openssh-server
 > ```
 >
-> - **7C.** `sudo` solicita permisos de administración y pedirá tu contraseña; `apt update` actualiza el catálogo de paquetes y `apt install` descarga e instala el servidor SSH. Si falla por falta de red, anota el mensaje y revisa el Paso 2 con el profesor. **No edites** archivos de configuración para compensar un error que aún no has identificado. Si el paquete ya estaba instalado, no hace falta reinstalarlo.
+> - **7C. Qué hace cada línea:** **línea 1**, `sudo` solicita permisos de administración y `apt update` actualiza el catálogo de paquetes; puede pedir la contraseña, que no se muestra mientras se escribe. **Línea 2**, `apt install openssh-server` instala el servidor SSH. Si falla por falta de red, anota el mensaje y revisa el Paso 2 con el profesor. **No edites** archivos de configuración para compensar un error que aún no has identificado. Si el paquete ya estaba instalado, no hace falta reinstalarlo.
 
 > [!example] Paso 8 — Cierra el vídeo (**WINDOWS**)
 > - **8A.** Muestra las tres comprobaciones del Paso 6, sin revelar la contraseña. Explica qué prueban. Detén OBS.
 > - **8B.** Guarda el tramo grabado para unirlo al vídeo final de Fase 0 al cerrar F0.4; no crees ni subas un vídeo por práctica.
-> - **8C.** Cuando prepares el vídeo final de Fase 0, pega su enlace en la línea «Vídeo» bajo **«F0.3 · Instalación»** de tu nota. Esa misma nota se entregará en GitHub después de la práctica F0.4.
+> - **8C.** Cuando prepares el vídeo final de Fase 0, pega el enlace del vídeo final en la única línea «Vídeo final de Fase 0» al principio de tu nota. Esa misma nota se versionará al cerrar la Fase 0 en F0.4.
 
 ## Cómo se puntúa y qué compruebas
 

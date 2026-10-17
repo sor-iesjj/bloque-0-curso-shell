@@ -20,7 +20,16 @@ case "$NORMALIZED" in */sor|*/sor/*|*/boveda_sor|*/boveda_sor/*) echo "PARADA: e
 if git -C "$PARENT" rev-parse --show-toplevel >/dev/null 2>&1; then echo "PARADA: esta carpeta hereda un repositorio Git"; exit 1; fi
 ```
 
-Línea a línea: `pwd -P` muestra la ruta física; `PARENT` la guarda; `NORMALIZED` convierte mayúsculas a minúsculas; `case` detiene si la ruta está en `SOR` o `Boveda_SOR`; `git rev-parse` detecta si una carpeta superior ya contiene un repositorio. **Si aparece una parada o un error, no continúes.**
+Qué hace cada línea:
+
+1. **Línea 1:** comprueba que Git está disponible; si falta, muestra una parada y termina.
+2. **Línea 2:** muestra la ruta física de la carpeta actual.
+3. **Línea 3:** guarda esa ruta para reutilizarla en las comprobaciones siguientes.
+4. **Línea 4:** normaliza las mayúsculas para que la comparación no dependa de cómo se escribió el nombre.
+5. **Línea 5:** detiene el recorrido si la ubicación está dentro de `SOR` o `Boveda_SOR`.
+6. **Línea 6:** detiene el recorrido si esta carpeta pertenece a un repositorio Git superior.
+
+Si aparece una parada o un error, no continúes.
 
 Si no se activó ninguna parada, crea el espacio y repite la barrera ya dentro de la raíz:
 
@@ -34,6 +43,16 @@ case "$N" in */sor|*/sor/*|*/boveda_sor|*/boveda_sor/*) echo "PARADA: el destino
 if git rev-parse --show-toplevel >/dev/null 2>&1; then echo "PARADA: el destino hereda un repositorio Git"; exit 1; fi
 ```
 
+Qué hace cada línea:
+
+1. **Línea 1:** crea la carpeta nueva del contexto; si ya existe o falla, se detiene para no reutilizarla.
+2. **Línea 2:** entra en la carpeta recién creada.
+3. **Línea 3:** muestra la ruta física final.
+4. **Línea 4:** guarda esa ruta para las comprobaciones siguientes.
+5. **Línea 5:** normaliza mayúsculas y minúsculas.
+6. **Línea 6:** detiene el recorrido si el destino quedó dentro de `SOR` o `Boveda_SOR`.
+7. **Línea 7:** detiene el recorrido si se heredó un repositorio Git.
+
 La ruta final debe terminar en `/SOR_Shell_Casa` y no tener un ancestro `/SOR/` ni `/Boveda_SOR/`. Puede estar en cualquier ubicación local neutral fuera de OneDrive; no es necesario que esté al mismo nivel que SOR. Si falla, no crees la bóveda; pide ayuda y deja intacta la carpeta equivocada. Si pasa, crea la bóveda vacía:
 
 ```bash
@@ -41,7 +60,12 @@ mkdir -- 'VMs' || { echo "PARADA: VMs ya existe; revisa antes de continuar"; exi
 mkdir -- 'Boveda_Shell_Casa' || { echo "PARADA: la bóveda ya existe; revisa antes de continuar"; exit 1; }
 ```
 
-`mkdir` solo crea la carpeta; no inicializa Git ni toca el SOR real. En Obsidian usa **Abrir carpeta como bóveda** y selecciona `Boveda_Shell_Casa`.
+Qué hace cada línea:
+
+1. **Línea 1:** crea `VMs`, donde se guardarán los archivos de la máquina virtual.
+2. **Línea 2:** crea la bóveda independiente de apuntes de Casa.
+
+`mkdir` solo crea las carpetas; no inicializa Git ni toca el SOR real. En Obsidian usa **Abrir carpeta como bóveda** y selecciona `Boveda_Shell_Casa`.
 
 ## 2 · Clona el material de lectura y prepara tu repositorio
 
@@ -52,11 +76,18 @@ cd 'Boveda_Shell_Casa'
 git clone https://github.com/sor-iesjj/bloque-0-curso-shell.git B0_Curso_Shell_Casa
 ```
 
+Qué hace cada línea:
+
+1. **Línea 1:** entra en la bóveda de Casa.
+2. **Línea 2:** descarga el material común de lectura del profesor en `B0_Curso_Shell_Casa`.
+
 Tu repositorio de escritura es otro: **`apuntes-shell-casa`**, de tu cuenta GitHub. Créalo vacío desde tu cuenta personal; no lo clones del profesor ni uses la fuente docente como `origin`. Cuando el repositorio exista, clónalo también dentro de la bóveda con el nombre `Apuntes_Shell_Casa`. En el comando siguiente reemplaza `TU_USUARIO` por el nombre exacto de tu cuenta antes de ejecutarlo:
 
 ```bash
 git clone https://github.com/TU_USUARIO/apuntes-shell-casa.git Apuntes_Shell_Casa
 ```
+
+Qué hace esta línea: clona el repositorio personal de escritura dentro de `Apuntes_Shell_Casa`. Sustituye `TU_USUARIO` antes de ejecutarla.
 
 Su remoto debe apuntar a tu cuenta y al repo `apuntes-shell-casa`. Comprueba `pwd` y `git remote -v` antes de escribir. Si el repo personal aún no existe o no tienes permiso para crearlo, detente y consulta; no inicialices Git en la bóveda completa ni en el clon docente.
 
@@ -76,28 +107,27 @@ Dentro de `Apuntes_Shell_Casa`, crea `Fase_0/` y la nota `Fase_0/shell-0-prepara
 - Hostname Ubuntu: shelllab-casa
 - Usuario Ubuntu: marko
 - Puerto anfitrión SSH: 2223 (o el que realmente use)
+- Vídeo final de Fase 0 (un único vídeo con los cuatro bloques):
 
 ## F0.1 · ISO
+- Versión usada: Ubuntu Server 24.04.5 LTS amd64; archivo `ubuntu-24.04.5-live-server-amd64.iso`:
 - URL oficial, versión y nombre real del archivo:
 - URL de SHA256SUMS y huella oficial:
 - Huella calculada y comparación:
-- Vídeo:
 - Respuestas F0.1.1–F0.1.5:
 
 ## F0.2 · VirtualBox y VM
 - Tipo de sistema/arquitectura y virtualización:
 - Versión de VirtualBox y cómo se obtuvo:
-- RAM y espacio libre medidos; recursos asignados y motivo:
+- RAM y espacio libre medidos; tamaño ISO exacto; reserva estimada para 25 GB de disco base + hasta 25 GB de cambios de instantánea + ISO; recursos asignados y motivo:
 - Ruta física de la VM (fuera de SOR, bóveda y repo):
 - NAT:
-- Vídeo:
 - Respuestas F0.2.1–F0.2.5:
 
 ## F0.3 · Ubuntu Server
 - Teclado, red, disco virtual y decisiones de instalación:
 - Resultado de whoami, hostname e ip -br address:
 - OpenSSH instalado:
-- Vídeo:
 - Respuestas F0.3.1–F0.3.5:
 
 ## F0.4 · SSH y punto de control
@@ -105,7 +135,6 @@ Dentro de `Apuntes_Shell_Casa`, crea `Fase_0/` y la nota `Fase_0/shell-0-prepara
 - Nombre de la clave pública creada (sin copiar su contenido):
 - Puerto anfitrión/invitado y prueba de acceso por clave:
 - Nombre de instantánea:
-- Vídeo:
 - Respuestas F0.4.1–F0.4.5:
 
 ## Fallos observados y solución
@@ -126,7 +155,7 @@ No guardes contraseñas, frase de paso, contenido de claves privadas ni datos pe
 
 - Una nota de fase, versionada en `apuntes-shell-casa` al terminar F0.4.
 - Un vídeo final de la Fase 0 en la playlist propia `B0_Curso_Shell_F0_Casa`. Puedes grabar los pasos en varias sesiones y unirlos para la entrega final; no subas un vídeo por práctica.
-- Canales `00.03.00.F001`–`F004` publican el guion y su PDF. La tarea de entrega es la de Fase 0 completa para Casa; termina en F004 y contiene el vídeo final.
+- Canales `00.03.00.F001`–`F004` publican el guion y su PDF. La tarea independiente para Casa cubre la Fase 0 completa; incluye la bitácora del proyecto, un único vídeo final y exactamente dos enlaces: el repositorio y la playlist propios.
 - La tarea independiente de esta fase enlaza exactamente este repositorio y esta playlist; no mezcles la edición Cole.
 - No subas ISO, disco virtual, contraseñas ni claves privadas.
 

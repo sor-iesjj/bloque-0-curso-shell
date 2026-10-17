@@ -1,59 +1,12 @@
-# FASE 1 — La terminal y el árbol de ficheros
+# Fase 1 · Terminal y árbol de ficheros
 
-**Duración estimada:** 4 h · **Idea central:** Saber dónde estás y moverte sin miedo
+Elige un contexto y conserva sus rutas independientes. Las prácticas del alumno no se realizan dentro de `SOR` ni de `Boveda_SOR`, que contienen apuntes reales.
 
-Marko preparó `ShellLab` con Ubuntu Server en la [Fase 0](../fase-0-preparar-laboratorio/README.md). Ahora entrará desde Git Bash por SSH y aprenderá a reconocer la sesión, moverse, mirar, crear y editar. Antes de cada práctica comprobará con `whoami` y `hostname` que trabaja dentro de la VM.
+| Contexto | Guía de fase |
+| :--- | :--- |
+| **Cole** | [Abrir Fase 1 · Cole](./Cole/README.md) |
+| **Casa** | [Abrir Fase 1 · Casa](./Casa/README.md) |
 
-**La idea central de la fase:** en Linux todo cuelga de una única raíz, y saber siempre dónde estás es la mitad del trabajo.
+Cada recorrido se corresponde con su bóveda, repositorio, VM, tarea de Teams y playlist. La entrega de fase contiene un único vídeo final y los dos enlaces del contexto. Los nueve canales/posts publican el material de cada práctica; no crean nueve tareas distintas.
 
----
-
-> [!important] ✍️ Cada ejercicio de esta fase son TRES entregables
-> | | |
-> | :--- | :--- |
-> | 📝 **Una entrada de apuntes** | En `00_Apuntes/Trimestre_1/B0_Curso_Shell/`. **El nombre exacto te lo da cada ejercicio en su Paso 0** |
-> | 📹 **Un vídeo** | En la playlist `B0_Curso_Shell` (No listado), con timestamps |
-> | ⬆️ **El `push`** | Que sube la entrada a tu repositorio |
->
-> **La entrada se abre ANTES de empezar el ejercicio**, no al terminarlo. La plantilla y qué va dentro: **[📦 Entregables](../02_ENTREGABLES.md)**.
-
----
-
-## Índice de ejercicios
-
-### 🟢 N1 — Mínimo (2 ejercicios)
-
-- [`EJ-01-01-01`](EJ-01-01-01.md) — Marko comprueba SSH y copia un archivo de prueba a Windows
-- [`EJ-01-01-02`](EJ-01-01-02.md) — Marko abre la terminal y aprende a leer el prompt
-
-### 🔵 N2 — Básico (2 ejercicios)
-
-- [`EJ-01-02-01`](EJ-01-02-01.md) — Marko se mueve por el árbol: rutas absolutas y relativas
-- [`EJ-01-02-02`](EJ-01-02-02.md) — Marko lista y lee ficheros sin abrir un editor
-
-### 🟡 N3 — Medio (2 ejercicios)
-
-- [`EJ-01-03-01`](EJ-01-03-01.md) — Marko crea, copia, mueve y borra (y aprende a temer a `rm -rf`)
-- [`EJ-01-03-02`](EJ-01-03-02.md) — Marko edita con nano y aprende a hacer la copia ANTES
-
-### 🟠 N4 — Avanzado (2 ejercicios)
-
-- [`EJ-01-04-01`](EJ-01-04-01.md) — Marko deja de teclear de más: Tab, historial y atajos
-- [`EJ-01-04-02`](EJ-01-04-02.md) — Marko aprende a resolver dudas solo: `man`, `--help` y `which`
-
-### 🔴 N5 — Reto (1 ejercicio)
-
-- [`EJ-01-05-01`](EJ-01-05-01.md) — RETO — Marko reconstruye a ciegas el árbol de Boochan
-
----
-
-### 🏁 Cierre
-
-- [`Cierre_Fase_1`](Cierre_Fase_1.md) — repaso, preguntas y tabla de verificación **antes de pasar a la siguiente fase**.
-
----
-
-> [!info] 🎬 Grabación
-> Todos los ejercicios de esta fase se graban y se suben a la playlist **`B0_Curso_Shell`**, como *No listado*. El nombre del vídeo es `S1.N.M · título`. Las obligaciones completas están en cada ejercicio y en el [README del curso](../README.md).
-
-[← Volver al índice del curso](../README.md)
+[← Curso de Shell](../README.md) · [Laboratorio Fase 0](../fase-0-preparar-laboratorio/README.md)

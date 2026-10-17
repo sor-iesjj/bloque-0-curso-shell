@@ -7,7 +7,7 @@ Título: Cierre de la Fase 1 — La terminal y el árbol de ficheros
 ## 🏁 Cierre de la Fase 1 — La terminal y el árbol de ficheros
 
 > [!info] Para qué es esta página
-> No es un ejercicio nuevo y **no se graba**: es una parada para consolidar. La Fase 2 da por sabido todo lo que hay aquí, así que si algo no lo tienes claro, **para y repásalo** (o pregúntame) antes de seguir.
+> No es un ejercicio nuevo y **no requiere grabación propia**: es una parada para consolidar. Si algo no lo tienes claro, **para y repásalo** (o pregúntame). Al terminar, cierra esta fase; la continuación Cole/Casa se publicará con sus propias rutas.
 
 ---
 

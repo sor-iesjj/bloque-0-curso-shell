@@ -5,7 +5,7 @@
 > **SOR · Curso de Shell · Fase 0** · **Preparación de RA.01**
 > **Dónde:** navegador, Explorador de archivos y PowerShell **del ordenador Windows**. Todavía no hay VM ni se usa Linux.
 
-> **Teams:** `00.03.00.F001` · Guion de práctica para COLE; la entrega es la Fase 0 completa.
+> **Canal Teams:** `00.03.00.F001` · Publicación del guion y su PDF. La tarea independiente de entrega cubre Fase 0 completa para COLE.
 > **Vídeo:** `B0.S.F0 · Marko prepara el laboratorio Shell · COLE` · **Playlist:** `B0_Curso_Shell_F0_Cole` · **Vídeo final de Fase 0** · **20 puntos**.
 
 > [!info] Encargo de Lucía
@@ -21,10 +21,11 @@
 ## Antes de grabar
 
 1. Lee **todos** los pasos de esta página, incluidos la verificación y la entrega.
-2. Ten preparado el navegador, el Explorador de archivos, OBS y una forma de mostrar tu identidad (por ejemplo, tu perfil de Teams o tu correo del centro). Evita mostrar datos que no formen parte de la práctica.
-3. En Obsidian, comprueba que tienes la nota `Boveda_Shell_Cole/Apuntes_Shell_Cole/Fase_0/shell-0-preparacion-del-laboratorio-cole.md`. Si aún no existe, vuelve al [índice de este recorrido](README.md) y sigue el apartado 3 antes de continuar.
-4. Abre esa nota y localiza el título **«F0.1 · ISO»**. Es el apartado donde escribirás los resultados de esta práctica. Conserva los otros tres apartados para las prácticas siguientes.
-5. Comprueba que sabes dónde OBS guardará el vídeo. El nombre final será **`B0.S.F0 · Marko prepara el laboratorio Shell · COLE`**.
+2. Antes de descargar una ISO de varios GB, abre **Configuración de Windows → Sistema → Acerca de** y comprueba «Tipo de sistema»: debe indicar un procesador x64. Si indica ARM o no sabes distinguirlo, detente y consulta; esta guía usa Ubuntu Server amd64.
+3. Ten preparado el navegador, el Explorador de archivos, OBS y una forma de mostrar tu identidad (por ejemplo, tu perfil de Teams o tu correo del centro). Evita mostrar datos que no formen parte de la práctica.
+4. En Obsidian, comprueba que tienes la nota `Boveda_Shell_Cole/Apuntes_Shell_Cole/Fase_0/shell-0-preparacion-del-laboratorio-cole.md`. Si aún no existe, vuelve al [índice de este recorrido](README.md) y sigue el apartado 3 antes de continuar.
+5. Abre esa nota y localiza el título **«F0.1 · ISO»**. Es el apartado donde escribirás los resultados de esta práctica. Conserva los otros tres apartados para las prácticas siguientes.
+6. Comprueba dónde OBS guardará las grabaciones de trabajo. Al terminar F0.4 unirás los tramos en un vídeo final llamado **`B0.S.F0 · Marko prepara el laboratorio Shell · COLE`**.
 
 ## Procedimiento
 
@@ -34,13 +35,13 @@
 > - **0C.** Muestra el apartado **«F0.1 · ISO»** de tu nota de apuntes, aún sin resultados. Ahí documentarás lo que ocurra, incluidos los fallos.
 
 > [!example] Paso 1 — Descarga la ISO oficial (**WINDOWS**)
-> - **1A.** En el navegador, abre [la página oficial de Ubuntu Server](https://ubuntu.com/download/server).
-> - **1B.** Localiza la descarga **LTS** adecuada para el tipo de equipo indicado por el profesor. LTS significa que Ubuntu mantiene esa versión durante más tiempo. **No adivines** la arquitectura: si la página ofrece varias y no sabes cuál corresponde a tu equipo, anótalo y pregunta antes de descargar.
+> - **1A.** En el navegador, abre [la página oficial de Ubuntu Server 24.04](https://releases.ubuntu.com/24.04/).
+> - **1B.** Localiza el archivo `ubuntu-24.04.5-live-server-amd64.iso`, indicado como imagen de instalación de servidor para PC de 64 bits (AMD64). Esta práctica usa Ubuntu Server 24.04 LTS amd64. Si no ves ese archivo o la página oficial muestra otra versión, detente y consulta al profesor antes de descargar; no uses una imagen ARM.
 > - **1C.** Descarga el `.iso` en una carpeta del disco de Windows que puedas localizar. Al terminar, abre el **Explorador de archivos** y ve a esa carpeta.
 > - **1D.** Bajo **«F0.1 · ISO»** de tu nota, escribe la dirección de la página, la versión mostrada y el **nombre real** del archivo. No uses un nombre de ejemplo en tus apuntes.
 
 > [!example] Paso 2 — Busca la huella publicada por Ubuntu (**WINDOWS**)
-> - **2A.** Si en el Paso 1 descargaste **Ubuntu Server 26.04.1 LTS**, abre en el navegador el [`SHA256SUMS` oficial de Ubuntu 26.04](https://releases.ubuntu.com/26.04/SHA256SUMS): contiene la línea de `ubuntu-26.04.1-live-server-amd64.iso`. **Comprueba que ese es el nombre real de tu archivo antes de usar esa línea.** Si la página de descarga ofrece otra versión cuando hagas la práctica, busca el `SHA256SUMS` del directorio oficial de **esa otra versión** en `releases.ubuntu.com`; no uses por costumbre el enlace de 26.04.
+> - **2A.** Abre el [`SHA256SUMS` de Ubuntu 24.04](https://releases.ubuntu.com/24.04/SHA256SUMS). Localiza la línea que nombra exactamente `ubuntu-24.04.5-live-server-amd64.iso`. **No uses otra línea ni una suma de otro directorio.** Si el archivo oficial del Paso 1 ya no coincide con ese nombre, detente y consulta al profesor.
 > - **2B.** Abre `SHA256SUMS` en el navegador. Cada línea contiene una huella y el nombre de un archivo. Busca **el mismo nombre** que viste en el Explorador.
 > - **2C.** Bajo **«F0.1 · ISO»** de tu nota, copia la huella de esa línea y la dirección web del `SHA256SUMS`. Si el nombre no coincide, **detente**: puede ser otra versión y esa huella no sirve para tu descarga.
 
@@ -54,19 +55,27 @@
 > Get-FileHash -LiteralPath '.\NOMBRE-REAL.iso' -Algorithm SHA256
 > ```
 >
-> - **3E.** Pulsa `Enter`. `Get-FileHash` **lee** el archivo y calcula la huella; `-LiteralPath` indica qué archivo leer; `'.\NOMBRE-REAL.iso'` significa «ese archivo en la carpeta actual»; `-Algorithm SHA256` pide usar el mismo cálculo que la lista oficial. **No borra ni modifica la ISO.** Copia el valor del campo `Hash` bajo **«F0.1 · ISO»** de tu nota. Si aparece «no se encuentra la ruta», comprueba carpeta y nombre antes de repetir.
+> - **3E. Qué hace la línea:** `Get-FileHash` lee el archivo y calcula la huella; `-LiteralPath` indica qué archivo leer; `'.\NOMBRE-REAL.iso'` señala el archivo en la carpeta actual; `-Algorithm SHA256` usa el mismo cálculo que la lista oficial. **No borra ni modifica la ISO.** Copia el valor del campo `Hash` bajo **«F0.1 · ISO»** de tu nota. Si aparece «no se encuentra la ruta», comprueba carpeta y nombre antes de repetir.
 >
-> - **3F. Si PowerShell está bloqueado en tu equipo:** vuelve al Explorador, entra en la carpeta de la ISO y usa «Open Git Bash here / Abrir Git Bash aquí», que ya utilizaste en el curso de Git. Escribe `pwd` para mostrar la carpeta y `ls` para confirmar que ves el `.iso`. Sustituye el nombre real en `sha256sum 'NOMBRE-REAL.iso'` y pulsa `Enter`. `sha256sum` lee el archivo de **Windows** desde Git Bash y muestra su huella; no estás dentro de Ubuntu. Copia la cadena que aparece antes del nombre. Si tampoco puedes abrir Git Bash, anota el mensaje y consulta sin modificar las políticas del ordenador.
+> - **3F. Si PowerShell está bloqueado en tu equipo:** vuelve al Explorador, entra en la carpeta de la ISO y usa «Open Git Bash here / Abrir Git Bash aquí», que ya utilizaste en el curso de Git. Ejecuta este bloque sustituyendo el nombre de ejemplo por el nombre real:
+>
+> ```bash
+> pwd
+> ls
+> sha256sum 'NOMBRE-REAL.iso'
+> ```
+>
+> **Línea 1:** muestra la carpeta actual. **Línea 2:** lista los archivos y permite comprobar que aparece la ISO. **Línea 3:** lee el archivo de Windows desde Git Bash y calcula su huella; no estás dentro de Ubuntu. Copia la cadena anterior al nombre. Si tampoco puedes abrir Git Bash, anota el mensaje y consulta sin cambiar las políticas del ordenador.
 
 > [!example] Paso 4 — Compara y decide (**WINDOWS**)
 > - **4A.** Bajo **«F0.1 · ISO»** de tu nota, coloca una debajo de otra la huella de `SHA256SUMS` y la que calculaste en Windows.
 > - **4B.** Compara **todos** los caracteres. Mayúsculas y minúsculas en letras hexadecimales representan el mismo valor; si cambia algún carácter, las huellas no coinciden.
 > - **4C.** Escribe «Coinciden: puedo usar esta ISO» o «No coinciden: no instalo esta ISO». Si no coinciden, primero comprueba que elegiste la línea del archivo correcto; después vuelve a descargar desde la página oficial y repite el cálculo. No pases a F0.2 con una ISO distinta de la comprobada.
 
-> [!example] Paso 5 — Termina el vídeo y registra su enlace (**WINDOWS**)
+> [!example] Paso 5 — Guarda la evidencia para el vídeo final (**WINDOWS**)
 > - **5A.** Muestra en pantalla la comparación y explica con tus palabras qué comprobaste. Detén OBS.
 > - **5B.** No subas todavía un vídeo. Guarda este tramo para el único vídeo final de Fase 0, que presentarás al terminar F0.4 en la playlist `B0_Curso_Shell_F0_Cole`.
-> - **5C.** En la descripción escribe `00:00 Presentación` y una marca de tiempo para cada paso grabado. Cuando prepares el vídeo final de Fase 0, pega su enlace en la línea «Vídeo» bajo **«F0.1 · ISO»** de tu nota. Subirás esa misma nota al repositorio **al cerrar la práctica F0.4**; sigue escribiendo en ella durante la fase.
+> - **5C.** Al montar el vídeo final, añade a su descripción `00:00 Presentación` y una marca de tiempo para cada bloque de la fase. Pega el único enlace del vídeo final en la línea «Vídeo final de Fase 0» al principio de tu nota cuando cierres F0.4. La nota se sube al repositorio al completar la fase.
 
 ## Cómo se puntúa y qué compruebas
 

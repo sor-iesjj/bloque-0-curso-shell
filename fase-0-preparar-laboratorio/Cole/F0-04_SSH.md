@@ -5,7 +5,7 @@
 > **SOR · Curso de Shell · Fase 0** · **RA.01 · CE.01.i (introducción)**
 > **Dónde:** VirtualBox y Git Bash en **Windows**; comandos Linux dentro de la **VM** después de conectar.
 
-> **Teams:** `00.03.00.F004` · Guion de práctica para COLE; la entrega es la Fase 0 completa.
+> **Canal Teams:** `00.03.00.F004` · Publicación del guion y su PDF. La tarea independiente de entrega cubre Fase 0 completa para COLE.
 > **Vídeo:** `B0.S.F0 · Marko prepara el laboratorio Shell · COLE` · **Playlist:** `B0_Curso_Shell_F0_Cole` · **Vídeo final de Fase 0** · **30 puntos**.
 
 > [!info] Encargo de Lucía
@@ -43,6 +43,10 @@
 > ssh -V
 > ```
 >
+> **Qué hace cada línea:**
+> 1. **Línea 1:** pide al cliente SSH de Windows que muestre su versión; no inicia una conexión.
+>
+>
 > - **1C.** `ssh` es el cliente; `-V` pide mostrar su versión. Anota si responde. Si aparece `command not found`, detente y consulta: aún no puedes conectarte desde esta terminal.
 
 > [!example] Paso 2 — Comprueba el servidor SSH (**VM, consola de VirtualBox**)
@@ -54,11 +58,22 @@
 > sudo ss -ltn
 > ```
 >
+> **Qué hace cada línea:**
+> 1. **Línea 1:** consulta si el paquete `openssh-server` está instalado, sin modificarlo.
+> 2. **Línea 2:** muestra sockets TCP en escucha; busca `:22`, el puerto del servidor SSH dentro de Ubuntu. `sudo` permite ver toda la información.
+>
+>
 > - **2C.** `dpkg-query -W` pregunta si está instalado el paquete `openssh-server`. `ss -ltn` muestra los puertos TCP en escucha; busca una línea que contenga `:22`. `sudo` da permiso para consultar toda la información y puede pedir tu contraseña.
 > - **2D.** Si falta el paquete, vuelve al [Paso 7 de F0.3](F0-03_INSTALACION.md). Si está instalado pero no aparece `:22`, anota el resultado y consulta; no edites `/etc/ssh/sshd_config` a ciegas. En algunas versiones Ubuntu usa `ssh.service` y en otras puede activar SSH mediante `ssh.socket`; la **conexión real** será la comprobación final.
 
 > [!example] Paso 3 — Configura VirtualBox (**WINDOWS, con la VM apagada**)
-> - **3A.** En la consola de Ubuntu ejecuta `sudo poweroff` y espera a que VirtualBox muestre `ShellLab_Cole` como **Apagada**. Este comando apaga Ubuntu de forma ordenada.
+> - **3A.** En la consola de Ubuntu ejecuta:
+>
+> ```bash
+> sudo poweroff
+> ```
+>
+> **Línea 1:** apaga Ubuntu de forma ordenada. Espera a que VirtualBox muestre `ShellLab_Cole` como **Apagada** antes de tocar su configuración.
 > - **3B.** Selecciona `ShellLab_Cole` en VirtualBox y abre **Configuración → Red → Adaptador 1**. Comprueba otra vez que «Conectado a» indica **NAT**.
 > - **3C.** Abre **Avanzadas → Reenvío de puertos** y añade una fila. Escribe estos valores en sus campos correspondientes:
 >
@@ -81,14 +96,22 @@
 > ssh -p 2222 marko@127.0.0.1
 > ```
 >
-> - **4B.** `ssh` abre la conexión. `-p 2222` selecciona el puerto de Windows que acabas de configurar. `marko` es la cuenta de Ubuntu. `127.0.0.1` señala el propio Windows, donde VirtualBox recibe y redirige la conexión. **Todavía no uses** la dirección interna que mostró `ip` en F0.3.
+> **Qué hace cada línea:**
+> 1. **Línea 1:** `ssh` inicia la conexión; `-p` selecciona el puerto anfitrión; `marko` es la cuenta de Ubuntu; `127.0.0.1` apunta al Windows local. VirtualBox reenvía ese puerto al 22 del invitado.
+>
+>
+> - **4B.** Consulta la explicación línea por línea justo debajo del bloque. **Todavía no uses** la dirección interna que mostró `ip` en F0.3.
 > - **4C.** La primera vez Git Bash puede mostrar una pregunta sobre la huella del servidor. **No escribas `yes` aún.** Mantén esa pregunta en pantalla y, en la consola de VirtualBox, entra como `marko` y ejecuta:
 >
 > ```bash
 > ssh-keygen -lf /etc/ssh/ssh_host_ed25519_key.pub
 > ```
 >
-> - **4D.** El comando de Ubuntu muestra la huella de su clave pública ED25519. Compara la cadena que empieza por `SHA256:` con la que aparece en Git Bash **si la pregunta de Git Bash dice `ED25519`**. Si coincide, vuelve a Git Bash, escribe `yes` y pulsa `Enter`. Si no coincide o el tipo de clave es otro, detente y consulta.
+> **Qué hace cada línea:**
+> 1. **Línea 1:** calcula y muestra la huella de la clave pública ED25519 del servidor Ubuntu para compararla con el aviso de la primera conexión.
+>
+>
+> - **4D.** Compara la cadena que empieza por `SHA256:` con la que aparece en Git Bash **si la pregunta dice `ED25519`**. Si coincide, vuelve a Git Bash, escribe `yes` y pulsa `Enter`. Si no coincide o el tipo de clave es otro, detente y consulta.
 > - **4E.** Git Bash pedirá la contraseña inicial de `marko`. Escríbela y pulsa `Enter`; no aparecen caracteres mientras tecleas. Esta contraseña se usa solo para autorizar tu clave pública en el siguiente paso; no es la clave de GitHub.
 
 
@@ -96,38 +119,65 @@
 > - **5A.** En Git Bash local de Windows, fuera de cualquier sesión SSH, comprueba que esos nombres no existen. No sobrescribas una clave anterior; si alguno existe, detente y pide al profesor una instrucción para recuperarla.
 >
 > ```bash
-> test ! -e ~/.ssh/shelllab_cole_ed25519 && test ! -e ~/.ssh/shelllab_cole_ed25519.pub
+> test ! -e ~/.ssh/shelllab_cole_ed25519 && test ! -e ~/.ssh/shelllab_cole_ed25519.pub && echo "Nombres disponibles" || { echo "PARADA: ya existe una clave con este nombre; no la sobrescribas"; exit 1; }
 > ```
 >
-> Si el comando no termina correctamente, no continúes. Si ambos nombres están libres, crea el directorio si hace falta y genera una clave Ed25519 exclusiva de este contexto.
+> **Qué hace cada línea:**
+> 1. **Línea 1:** verifica que no existe ninguno de los dos archivos. Solo si ambas pruebas son verdaderas muestra «Nombres disponibles»; si alguno existe, muestra «PARADA» y termina, sin sobrescribirlo.
+>
+>
+> Si aparece «Nombres disponibles», ambos nombres están libres. Si ves «PARADA» o cualquier otro resultado, no continúes ni sobrescribas archivos. Solo tras la confirmación, crea el directorio si hace falta y genera una clave Ed25519 exclusiva de este contexto.
 >
 > ```bash
 > mkdir -p ~/.ssh
 > ssh-keygen -t ed25519 -a 64 -f ~/.ssh/shelllab_cole_ed25519 -C shelllab-cole
 > ```
 >
-> `mkdir -p` crea `~/.ssh` si hace falta; `ssh-keygen` genera el par; `-t ed25519` elige el tipo; `-a 64` refuerza el derivado de la frase de paso; `-f` fija nombres distintos por contexto; `-C` añade una etiqueta. Si pregunta por una frase de paso, crea una que puedas recuperar y **no la muestres ni la guardes en los apuntes**. Se crean dos archivos: el que acaba en `.pub` es público; el que no lleva `.pub` es privado.
+> **Qué hace cada línea:**
+> 1. **Línea 1:** crea la carpeta local `~/.ssh` solo si todavía no existe.
+> 2. **Línea 2:** genera la clave; `-t ed25519` elige el algoritmo, `-a 64` endurece el derivado de la frase de paso, `-f` fija el nombre exclusivo del contexto y `-C` añade una etiqueta. El archivo `.pub` es la clave pública; el otro es privado.
+>
+>
+> Si pregunta por una frase de paso, crea una que puedas recuperar y **no la muestres ni la guardes en los apuntes**. Se crean dos archivos: el que acaba en `.pub` es público; el que no lleva `.pub` es privado.
 > - **5B.** Antes de continuar, confirma en Git Bash que existen ambos archivos, sin abrir ni mostrar el contenido de la clave privada:
 >
 > ```bash
 > test -f ~/.ssh/shelllab_cole_ed25519 && test -f ~/.ssh/shelllab_cole_ed25519.pub && echo "Par de claves creado"
 > ```
 >
-> `test -f` comprueba cada archivo y `&&` ejecuta el mensaje solo si existen los dos. Si no aparece «Par de claves creado», detente y consulta. **Nunca copies el archivo privado** `shelllab_cole_ed25519`, ni lo subas a GitHub, Teams, vídeos o apuntes.
+> **Qué hace cada línea:**
+> 1. **Línea 1:** verifica que están los dos archivos y muestra el mensaje solo si ambos existen; no revela su contenido.
+>
+>
+> Si no aparece «Par de claves creado», detente y consulta. **Nunca copies el archivo privado** `shelllab_cole_ed25519`, ni lo subas a GitHub, Teams, vídeos o apuntes.
 > - **5C.** Con la conexión SSH inicial por contraseña abierta, ejecuta este bloque desde **Git Bash local** para enviar solo la clave pública a Ubuntu. Abre otra pestaña/ventana Git Bash si hace falta; conserva la consola de la VM como rescate.
 >
 > ```bash
 > cat ~/.ssh/shelllab_cole_ed25519.pub | ssh -p 2222 -o PubkeyAuthentication=no -o PreferredAuthentications=password marko@127.0.0.1 'umask 077; mkdir -p ~/.ssh; cat >> ~/.ssh/authorized_keys; chmod 700 ~/.ssh; chmod 600 ~/.ssh/authorized_keys'
 > ```
 >
-> `cat` lee únicamente el archivo `.pub`; `|` pasa esa línea al cliente SSH; `-o PubkeyAuthentication=no` fuerza esta primera autorización con contraseña; el texto entre comillas se ejecuta en Ubuntu: crea `.ssh`, añade la clave a `authorized_keys` y fija permisos privados. Escribe la contraseña de Ubuntu si la pide. Ejecuta esta instalación **una sola vez** para evitar entradas duplicadas. Si tu puerto no es 2222, reemplázalo por el que anotaste en F0.4.
-> - **5D.** Cierra la sesión inicial con `exit` y vuelve a probar desde Windows forzando autenticación por clave:
+> **Qué hace cada línea:**
+> 1. **Línea 1:** `cat` lee solo la clave pública y `|` la envía a SSH; `-p` usa el puerto anfitrión anotado; las dos opciones `-o` fuerzan autenticación por contraseña para esta instalación inicial; el texto entre comillas se ejecuta en Ubuntu: `umask` limita permisos nuevos, `mkdir -p` prepara `.ssh`, `cat >>` añade la clave sin sustituir las anteriores y `chmod` fija permisos privados. Se ejecuta una sola vez para no duplicar entradas.
+>
+>
+> Escribe la contraseña de Ubuntu si la pide. Ejecuta esta instalación **una sola vez** para evitar entradas duplicadas. Si tu puerto no es 2222, reemplázalo por el que anotaste en F0.4.
+> - **5D.** Cierra la sesión inicial escribiendo el comando siguiente en Git Bash y pulsa `Enter`:
+>
+> ```bash
+> exit
+> ```
+>
+> **Línea 1:** cierra la sesión SSH inicial. Cuando vuelvas al indicador local de Git Bash, prueba la autenticación por clave:
 >
 > ```bash
 > ssh -i ~/.ssh/shelllab_cole_ed25519 -o IdentitiesOnly=yes -o PubkeyAuthentication=yes -o PasswordAuthentication=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=publickey -p 2222 marko@127.0.0.1
 > ```
 >
-> `-i` selecciona la clave privada local; `IdentitiesOnly=yes` evita probar otras claves; `PasswordAuthentication=no` hace que esta prueba falle en vez de ocultar un problema usando la contraseña; `-p` selecciona el puerto anfitrión. Puede pedir la frase de paso local de la clave, no la contraseña de Ubuntu. Si no entra, no borres `authorized_keys` ni desactives contraseñas: consulta la tabla de recuperación y conserva la consola local.
+> **Qué hace cada línea:**
+> 1. **Línea 1:** `-i` selecciona esta clave privada; `IdentitiesOnly=yes` evita probar otras claves; las opciones de autenticación desactivan contraseña y teclado interactivo para que la prueba falle si la clave no funciona; `-p` usa el puerto anfitrión y el destino identifica usuario y Windows local.
+>
+>
+> Consulta la explicación línea por línea justo debajo del bloque. Puede pedir la frase de paso local de la clave, no la contraseña de Ubuntu. Si no entra, no borres `authorized_keys` ni desactives contraseñas: consulta la tabla de recuperación y conserva la consola local.
 > - **5E.** Ya dentro por clave, anota que la clave privada permanece en Windows y que Ubuntu recibió solo la pública. No copies ninguna clave al repositorio.
 
 > [!example] Paso 6 — Demuestra que has entrado en Ubuntu (**sesión SSH de la VM**)
@@ -139,30 +189,69 @@
 > pwd
 > ```
 >
+> **Qué hace cada línea:**
+> 1. **Línea 1:** muestra la cuenta activa; debe ser `marko`.
+> 2. **Línea 2:** muestra el nombre del invitado; debe coincidir con el contexto.
+> 3. **Línea 3:** muestra la carpeta actual dentro de Ubuntu.
+>
+>
 > - **6B.** `whoami` debe identificar a `marko`. `hostname` debe mostrar `shelllab-cole`. `pwd` muestra la carpeta actual de Ubuntu. Anota los resultados reales bajo **«F0.4 · SSH y punto de control»** de tu nota; **estos tres comandos ahora se ejecutan en la VM, aunque la ventana sea Git Bash de Windows**.
-> - **6C.** Ejecuta `exit`. Este comando cierra la sesión SSH y te devuelve a **Git Bash local de Windows**. Anota qué cambió en el indicador de la terminal. Si quieres comprobarlo, ejecuta `hostname` de nuevo: ahora se refiere al anfitrión.
+> - **6C.** Cierra la sesión SSH:
+>
+> ```bash
+> exit
+> ```
+>
+> **Línea 1:** termina la sesión SSH y devuelve la terminal a Git Bash local de Windows. Anota qué cambió en el indicador. Si quieres comprobarlo, ejecuta `hostname` de nuevo desde Git Bash: ahora se refiere al anfitrión.
 
 > [!example] Paso 7 — Guarda una instantánea (**VM y WINDOWS**)
-> - **7A.** Después de comprobar el acceso, entra en la consola de Ubuntu o vuelve a conectarte por SSH y ejecuta `sudo poweroff`. Espera a que VirtualBox muestre la VM como **Apagada**.
+> - **7A.** Después de comprobar el acceso, entra en la consola de Ubuntu o vuelve a conectarte por SSH y ejecuta:
+>
+> ```bash
+> sudo poweroff
+> ```
+>
+> **Línea 1:** apaga Ubuntu de forma ordenada. Espera a que VirtualBox muestre la VM como **Apagada**.
 > - **7B.** En VirtualBox abre la vista **Instantáneas** de `ShellLab_Cole` y elige **Tomar**. Nómbrala exactamente **`ShellLab_Cole - SSH con clave`**.
 > - **7C.** Vuelve a la lista y comprueba que aparece. Una instantánea conserva el estado de la VM, **pero no** tus apuntes de Windows, vídeos o contraseña guardada fuera de la VM. No restauremos todavía nada: aprenderás a usarla cuando un ejercicio lo requiera.
 
 > [!example] Paso 8 — Cierra el vídeo y entrega (**WINDOWS, repositorio de apuntes**)
 > - **8A.** Detén OBS. Une los tramos grabados de F0.1 a F0.4 en un único vídeo final de Fase 0. Súbelo con el título **`B0.S.F0 · Marko prepara el laboratorio Shell · COLE`** a la playlist **`B0_Curso_Shell_F0_Cole`**, como **«No listado»**. Añade `00:00 Presentación` y marcas de tiempo para los cuatro bloques de prácticas.
-> - **8B.** Pega el enlace en la línea «Vídeo» bajo **«F0.4 · SSH y punto de control»** de tu nota. Comprueba que esa misma nota contiene **el enlace del vídeo final, las 20 respuestas numeradas** y las evidencias de las cuatro prácticas. No incluyas contraseñas, claves privadas, ISO ni discos virtuales.
-> - **8C.** En el Explorador de Windows entra en `Boveda_Shell_Cole/Apuntes_Shell_Cole`, raíz local del repositorio `apuntes-shell-cole`. Abre **Git Bash en esa carpeta**, como ya aprendiste en el curso de Git. Antes de subir, ejecuta:
+> - **8B.** Pega el enlace en la única línea «Vídeo final de Fase 0» al principio de tu nota. Comprueba que esa misma nota contiene **el enlace del vídeo final, las 20 respuestas numeradas** y las evidencias de las cuatro prácticas. No incluyas contraseñas, claves privadas, ISO ni discos virtuales.
+> - **8C.** En el Explorador de Windows entra en `Boveda_Shell_Cole/Apuntes_Shell_Cole`, raíz local del repositorio `apuntes-shell-cole`. Abre Git Bash ahí. Antes de preparar cambios, confirma ubicación, estado y remoto:
 >
 > ```bash
 > pwd
 > git status
+> git remote -v
+> ```
+>
+> **Qué hace cada línea:**
+> 1. **Línea 1:** muestra la carpeta actual; debe ser el repositorio local de apuntes.
+> 2. **Línea 2:** enseña cambios del repositorio antes de prepararlos; detente si aparecen archivos ajenos a la nota de fase.
+> 3. **Línea 3:** muestra los remotos; debe aparecer el repositorio personal del contexto, no el del profesor.
+>
+>
+> Consulta la explicación línea por línea justo debajo del bloque. **Si alguna condición falla, detente y no ejecutes el bloque siguiente.**
+>
+> Si todo coincide, prepara y publica únicamente la nota:
+>
+> ```bash
 > git add Fase_0/shell-0-preparacion-del-laboratorio-cole.md
 > git diff --cached --stat
 > git commit -m "Curso Shell: Fase 0 terminada"
 > git push
 > ```
 >
-> - **8D.** `pwd` debe terminar en `Apuntes_Shell_Cole`; `git status` debe reconocer el repositorio y `git remote -v` debe mostrar tu repo `apuntes-shell-cole` de tu cuenta, nunca `sor-iesjj/bloque-0-curso-shell`. Si no es así, **detente antes de `git add`**. `git add` prepara solo tu entrada; `git diff --cached --stat` enseña qué fichero entrará en el commit; `git commit` guarda la versión local y `git push` la envía a GitHub. Si `git diff --cached --stat` muestra otro archivo que no esperabas, consulta antes de confirmar.
-> - **8E.** Abre tu repositorio de apuntes en GitHub y comprueba que la entrada y los cuatro enlaces aparecen. Entrega en la tarea/canal de Teams `00.03.00.F004` los dos enlaces de este proyecto: el repositorio `apuntes-shell-cole` y la playlist `B0_Curso_Shell_F0_Cole`.
+> **Qué hace cada línea:**
+> 1. **Línea 1:** prepara para el commit únicamente la nota de la Fase 0.
+> 2. **Línea 2:** muestra el resumen de los cambios preparados; detente si incluye otro archivo.
+> 3. **Línea 3:** crea un commit local con la nota preparada.
+> 4. **Línea 4:** envía ese commit al repositorio remoto propio.
+>
+>
+> Consulta la explicación línea por línea justo debajo del bloque. Si el resumen muestra otro archivo, detente antes del commit.
+> - **8E.** Abre tu repositorio de apuntes en GitHub y comprueba que la nota de Fase 0 y el enlace del vídeo final aparecen. En la tarea independiente de Fase 0 para COLE, incluye exactamente dos enlaces de este contexto: el repositorio `apuntes-shell-cole` y la playlist `B0_Curso_Shell_F0_Cole`. El canal `00.03.00.F004` publica el guion y su PDF; no es la tarea de entrega.
 
 ## Si no conecta
 
