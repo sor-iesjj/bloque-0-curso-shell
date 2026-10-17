@@ -19,98 +19,50 @@ Este curso te enseña esos comandos **antes** de que los necesites, para que cua
 
 ## **2 · 🛑 EMPIEZA POR LA FASE 0**
 
-**Antes de abrir la Fase 1**, sigue este orden:
+Elige un contexto y conserva sus propios apuntes, repositorio, VM y playlist durante el curso. **Casa empieza desde cero**; no presupone que hayas trabajado en Cole.
 
-| # | Qué | Dónde está explicado |
-| :--- | :--- | :--- |
-| **1** | **Prepara tu sitio de trabajo:** descarga este curso dentro de `Boveda_SOR/01_Practicas/`, ábrelo en Obsidian y deja listo dónde guardarás los apuntes | **[🛠️ Antes de empezar](01_ANTES_DE_EMPEZAR.md)** |
-| **2** | **Entérate de qué tienes que entregar** y cómo se llaman tus ficheros | **[📦 Entregables](02_ENTREGABLES.md)** |
-| **3** | **Prepara `ShellLab`:** ISO, VM, Ubuntu Server y SSH | **[Fase 0](fase-0-preparar-laboratorio/README.md)** |
-| **4** | **Empieza la Fase 1** con la conexión SSH comprobada | [Fase 1](fase-1-terminal-y-ficheros/README.md) |
-
-> [!danger] 🛑 Si te saltas el paso 1, no tendrás dónde guardar el trabajo
-> Y si te saltas el 2, escribirás los apuntes al final de memoria — que **cuenta como no entregado**.
->
-> La Fase 0 es trabajo práctico evaluable; reserva el tiempo que requiera tu equipo y documenta los problemas reales.
-
----
-
-## **3 · FASE 0 Y SIETE FASES DE EJERCICIOS**
-
-Cada fase tiene **su propio índice** con sus ejercicios ordenados por dificultad. Entra en la que toque:
-
-| # | Fase | La idea central | Ejercicios | Dónde te va a servir |
-| :--- | :--- | :--- | :---: | :--- |
-| **0** | **[Prepara el laboratorio](fase-0-preparar-laboratorio/README.md)** | ISO verificada, Ubuntu Server y acceso SSH desde Git Bash | 4 prácticas | Introducción al Bloque 1 y base del curso |
-| **1** | **[La terminal y el árbol de ficheros](fase-1-terminal-y-ficheros/README.md)** | Saber dónde estás y moverte sin miedo | 9 | En todo el curso |
-| **2** | **[Identidad y permisos](fase-2-identidad-y-permisos/README.md)** | Quién eres y qué puedes hacer | 11 | Boochan **F5 y F6** |
-| **3** | **[Tuberías y texto](fase-3-tuberias-y-texto/README.md)** | Encadenar comandos y preguntarle cosas al sistema | 9 | Las **verificaciones** de todas las fases |
-| **4** | **[El sistema vivo](fase-4-sistema-vivo/README.md)** | Diagnosticar en vez de reiniciar | 9 | Boochan **F1 a F4** |
-| **5** | **[Discos y montajes](fase-5-discos-y-montajes/README.md)** | Dónde viven los datos de verdad | 9 | Boochan **F6** |
-| **6** | **[ACL](fase-6-acl/README.md)** | Cuando tres casillas de permisos no llegan | 9 | Boochan **F7** |
-| **7** | **[Scripts](fase-7-scripts/README.md)** | Leer el código de los verificadores | 9 | Los `verificar_faseN.sh` |
-
-> [!tip] 💡 Cómo se recorre
-> **En orden.** Cada fase se apoya en la anterior: en la 6 vas a usar usuarios que creaste en la 2, y en la 7 vas a leer bucles que aprendiste en la 3.
->
-> Dentro de cada fase, los ejercicios van **de menos a más**:
->
-> | Nivel | Qué es |
-> | :--- | :--- |
-> | 🟢 **N1 · Mínimo** | Lo que no se puede no saber |
-> | 🔵 **N2 · Básico** | El uso normal del día a día |
-> | 🟡 **N3 · Medio** | Donde empieza a hacer falta pensar |
-> | 🟠 **N4 · Avanzado** | Lo que separa a quien administra de quien copia |
-> | 🔴 **N5 · Reto** | Sin procedimiento: te lo montas tú |
-
----
-
-## **4 · CÓMO ES CADA EJERCICIO**
-
-Todos siguen la misma estructura, así que en cuanto hagas dos ya sabes dónde está cada cosa:
-
-```
-📌 Ficha            código, fase, nivel, playlist y nombre del vídeo
-💼 Situación        el encargo de Lucía o el lío de Carlos
-📚 Fundamento       la idea, el error nº1, el vocabulario
-🔗 Dónde lo usarás  la fase de Boochan en la que te hará falta
-📹 Grabación        las obligaciones del vídeo
-🛠️ Procedimiento    Paso 0 (abre tus apuntes) y los pasos del ejercicio
-🚩 Errores          tabla: error · qué pasa · cómo evitarlo
-🤔 Comprueba        las preguntas, que van en tus apuntes
-✅ Entregables      qué subes y cómo se llama
-🎓 Qué has aprendido + Siguiente
-```
-
----
-
-## **5 · LO QUE ENTREGAS**
-
-**La Fase 0** entrega **una entrada común, cuatro vídeos y un `push` de cierre**, con [rúbrica propia](02_ENTREGABLES.md#fase-0--una-entrada-cuatro-vídeos-y-una-entrega).
-
-**Desde la Fase 1**, cada ejercicio son tres cosas, y las tres van juntas:
-
-| | |
+| Contexto | Recorrido completo |
 | :--- | :--- |
-| 📝 **Una entrada de apuntes** | En tu repositorio `apuntes-sor-t1` |
-| 📹 **Un vídeo** | En tu playlist `B0_Curso_Shell`, No listado |
-| ⬆️ **El `push`** | Que sube la entrada a GitHub |
+| **Cole** | [Fase 0 · preparar laboratorio](fase-0-preparar-laboratorio/Cole/README.md) y después [Fase 1 · terminal y ficheros](fase-1-terminal-y-ficheros/Cole/README.md) |
+| **Casa** | [Fase 0 · preparar laboratorio](fase-0-preparar-laboratorio/Casa/README.md) y después [Fase 1 · terminal y ficheros](fase-1-terminal-y-ficheros/Casa/README.md) |
 
-El detalle completo —ruta, nombres, plantilla copiable y cómo se entrega— está en **[📦 Entregables](02_ENTREGABLES.md)**.
+> [!danger] Trabaja solo en el contexto elegido
+> No crees ni guardes el laboratorio del alumno dentro del árbol real `SOR` o `Boveda_SOR`. Las guías separan los espacios para evitar que una orden ejecutada por despiste dañe tus apuntes reales. Sigue en orden todas las barreras de ubicación antes de crear archivos o VM.
+
+Las guías antiguas `01_ANTES_DE_EMPEZAR.md` y `02_ENTREGABLES.md` describen el recorrido previo y **no son instrucciones vigentes**. Usa los enlaces de Cole o Casa de la tabla.
+---
+
+## **3 · RECORRIDO DISPONIBLE**
+
+| Fase | Estado | Cole | Casa |
+| :--- | :--- | :--- | :--- |
+| **0 · Preparar laboratorio** | Disponible | [Guía completa](fase-0-preparar-laboratorio/Cole/README.md) | [Guía completa](fase-0-preparar-laboratorio/Casa/README.md) |
+| **1 · Terminal y ficheros** | Disponible | [Guía completa](fase-1-terminal-y-ficheros/Cole/README.md) | [Guía completa](fase-1-terminal-y-ficheros/Casa/README.md) |
+| **2–7** | **No disponibles en el recorrido Cole/Casa actual** | No seguir las guías antiguas | No seguir las guías antiguas |
+
+Las fases 2–7 conservan material docente previo, pero sus rutas y entregas todavía no están adaptadas a estos espacios independientes. No las ejecutes ni uses los enlaces antiguos como continuación del curso actual.
+
+> [!tip] Recorrido
+> Elige Cole o Casa y sigue el índice de esa fase en orden. Casa comienza desde cero y no depende de que hayas hecho Cole.
+---
+
+## **4 · CÓMO SE SIGUE UNA GUÍA**
+
+Cada práctica identifica contexto, requisitos, objetivo, comandos en orden, explicación línea por línea, resultado esperado, preguntas y evidencias. Lee la guía completa antes de empezar; las condiciones de parada aparecen antes de la acción que protegen.
 
 ---
 
-## **6 · CUÁNTO TIEMPO LLEVA**
+## **5 · ENTREGA POR FASE Y CONTEXTO**
 
-Las fases 1–7 estaban planificadas como trabajo distribuido en varias semanas. **La Fase 0 añade la preparación de la VM**; su duración depende de la descarga, la instalación y los recursos del equipo. No se presupone un tiempo fijo.
+Cada fase tiene una tarea de Teams y una playlist diferenciadas para Cole y Casa. Al terminar una fase, entrega su bitácora/repo y **un único vídeo final de esa fase**; en la tarea incluye exactamente dos enlaces: repositorio propio y playlist propia. Las grabaciones parciales pueden prepararse y unirse; no se sube un vídeo por cada ejercicio.
 
-Yo te diré **qué fases toca hacer y cuándo**. No hace falta que te las hagas todas seguidas.
+Las publicaciones `00.03.00.F001`–`F004` difunden los guiones y PDF de Fase 0. La tarea de entrega F0 es la de la fase completa por contexto, al cerrar F004. En Fase 1 las publicaciones de guion no sustituyen las tareas independientes Cole/Casa.
 
 ---
 
-> [!summary] 🎓 Lo que te llevas de este curso
-> Que la terminal **no es magia ni un examen de memoria**: es un puñado de herramientas que hacen una cosa cada una y se combinan entre sí.
->
-> Y que la diferencia entre copiar un comando y entenderlo es **la misma que hay entre arreglar un servidor y esperar a que venga alguien**.
->
-> **Empieza por:** [🛠️ Antes de empezar](01_ANTES_DE_EMPEZAR.md).
+## **6 · FASES DISPONIBLES**
+
+Fase 0 y Fase 1 están disponibles con recorridos independientes. Fases 2–7 no están habilitadas para el recorrido Cole/Casa actual; no sigas sus rutas antiguas.
+
+> [!summary] Empieza aquí
+> Elige [Cole](fase-0-preparar-laboratorio/Cole/README.md) o [Casa](fase-0-preparar-laboratorio/Casa/README.md).
