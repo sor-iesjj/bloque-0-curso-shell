@@ -106,7 +106,7 @@ Dentro de `Apuntes_Shell_Casa`, crea `Fase_0/` y la nota `Fase_0/shell-0-prepara
 - VM: ShellLab_Casa
 - Hostname Ubuntu: shelllab-casa
 - Usuario Ubuntu: marko
-- Puerto anfitrión SSH: 2223 (o el que realmente use)
+- Puerto anfitrión SSH: 2223 (fijo para este contexto)
 - Vídeo final de Fase 0 (un único vídeo con los cuatro bloques):
 
 ## F0.1 · ISO

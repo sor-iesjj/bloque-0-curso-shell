@@ -15,7 +15,7 @@
 
 - **Git Bash** es una ventana de terminal que se abre en **Windows**. Escribir comandos ahí **no significa estar en Ubuntu**. Solo estarás en Ubuntu cuando establezcas la conexión SSH.
 - **SSH** conecta un programa **cliente** (el `ssh` que ejecutarás en Git Bash) con un programa **servidor** (OpenSSH instalado en Ubuntu). Al entrar, la terminal mostrará y ejecutará los comandos en la VM. `exit` cerrará esa conexión y te devolverá a Windows.
-- **Puerto:** número que ayuda a dirigir una conexión al programa correcto. OpenSSH escucha normalmente en el puerto `22` **dentro de Ubuntu**. Usaremos `2222` **en Windows** como ejemplo; VirtualBox enlazará ambos números.
+- **Puerto:** número que ayuda a dirigir una conexión al programa correcto. OpenSSH escucha normalmente en el puerto `22` **dentro de Ubuntu**. Usaremos siempre `2222` **en Windows** en este contexto; VirtualBox enlazará ambos números.
 - **`127.0.0.1`:** dirección que significa «este mismo ordenador». Aquí señala tu Windows, que es donde se ejecuta VirtualBox. No es una dirección de la red del centro ni la IP interna de Ubuntu.
 - **Redirección de puertos:** regla de VirtualBox que recibe la conexión en `127.0.0.1:2222` y la lleva al puerto `22` de Ubuntu. La VM conserva NAT y su dirección interna automática. [Manual de red de VirtualBox](https://docs.oracle.com/en/virtualization/virtualbox/7.2/user/networkingdetails.html).
 - **Huella del servidor:** identificador de la clave pública de la VM. En la primera conexión la compararás con lo que muestra la propia consola de Ubuntu antes de aceptarla. **La huella de servidor identifica a Ubuntu. Después crearás en Windows una clave de autenticación SSH exclusiva para este laboratorio. No reutilices la clave de GitHub.**
@@ -24,7 +24,7 @@
 
 1. Lee **toda** la práctica, incluida la tabla «Si no conecta». Ubica en VirtualBox el Adaptador 1 de `ShellLab_Cole`; debe seguir en NAT.
 2. En Obsidian abre tu nota `Boveda_Shell_Cole/Apuntes_Shell_Cole/Fase_0/shell-0-preparacion-del-laboratorio-cole.md`. Comprueba que los apartados **«F0.1 · ISO»**, **«F0.2 · Máquina virtual»** y **«F0.3 · Instalación»** ya contienen tus resultados.
-3. En el encabezado de esa nota identifica la línea «Puerto SSH anfitrión»; ahí anotarás el puerto que realmente uses. Después baja al apartado **«F0.4 · SSH y punto de control»**, donde registrarás la conexión y la instantánea.
+3. En el encabezado de esa nota identifica la línea «Puerto SSH anfitrión»; ahí registrarás el puerto fijo de este contexto. Después baja al apartado **«F0.4 · SSH y punto de control»**, donde registrarás la conexión y la instantánea.
 4. Ten abiertas la consola de la VM, Git Bash en Windows y OBS. Prepara tu identidad. No digas ni muestres tu contraseña.
 5. El título del vídeo será **`B0.S.F0 · Marko prepara el laboratorio Shell · COLE`**. Se incorporará al único vídeo final de Fase 0, que subirás al completar F0.4 a `B0_Curso_Shell_F0_Cole`.
 
@@ -86,11 +86,11 @@
 > | IP invitado | **Vacía** | VirtualBox conoce la IP interna asignada a la VM |
 > | Puerto invitado | `22` | Número en el que escucha OpenSSH dentro de Ubuntu |
 >
-> - **3D.** Relee **toda** la fila antes de guardar. Si `2222` está ocupado, anota el error, consulta y elige otro puerto libre; **anota el número nuevo y úsalo también en el Paso 4**. No dejes vacía la «IP anfitrión»: entonces podrías abrir el puerto en otras interfaces del ordenador. Si los nombres de los campos no coinciden con los de tu versión, consulta el [manual oficial](https://docs.oracle.com/en/virtualization/virtualbox/7.2/user/networkingdetails.html) antes de aceptar.
+> - **3D.** Relee **toda** la fila antes de guardar. Si `2222` está ocupado, no guardes otra regla ni elijas otro número: detente, anota el error y consulta al profesor. F1 usa este mismo puerto fijo. No dejes vacía la «IP anfitrión»: entonces podrías abrir el puerto en otras interfaces del ordenador. Si los nombres de los campos no coinciden con los de tu versión, consulta el [manual oficial](https://docs.oracle.com/en/virtualization/virtualbox/7.2/user/networkingdetails.html) antes de aceptar.
 > - **3E.** Guarda la regla, arranca `ShellLab_Cole` y espera a que aparezca `login:`. No hace falta iniciar sesión en la consola para que el servidor SSH esté disponible.
 
 > [!example] Paso 4 — Conecta por primera vez (**WINDOWS, Git Bash**)
-> - **4A.** Vuelve a Git Bash. Escribe el comando; cambia `2222` **solo si anotaste otro puerto en 3D**:
+> - **4A.** Vuelve a Git Bash. Escribe el comando exactamente como aparece; el puerto `2222` es fijo para este contexto:
 >
 > ```bash
 > ssh -p 2222 marko@127.0.0.1
@@ -160,7 +160,7 @@
 > 1. **Línea 1:** `cat` lee solo la clave pública y `|` la envía a SSH; `-p` usa el puerto anfitrión anotado; las dos opciones `-o` fuerzan autenticación por contraseña para esta instalación inicial; el texto entre comillas se ejecuta en Ubuntu: `umask` limita permisos nuevos, `mkdir -p` prepara `.ssh`, `cat >>` añade la clave sin sustituir las anteriores y `chmod` fija permisos privados. Se ejecuta una sola vez para no duplicar entradas.
 >
 >
-> Escribe la contraseña de Ubuntu si la pide. Ejecuta esta instalación **una sola vez** para evitar entradas duplicadas. Si tu puerto no es 2222, reemplázalo por el que anotaste en F0.4.
+> Escribe la contraseña de Ubuntu si la pide. Ejecuta esta instalación **una sola vez** para evitar entradas duplicadas. Este contexto usa el puerto fijo 2222; si está ocupado, detente y consulta, no sustituyas el número.
 > - **5D.** Cierra la sesión inicial escribiendo el comando siguiente en Git Bash y pulsa `Enter`:
 >
 > ```bash
@@ -260,7 +260,7 @@
 | `Connection refused` | VM encendida; regla hacia puerto `22`; OpenSSH instalado y `:22` en escucha. |
 | `Connection timed out` | VM encendida; Adaptador 1 en NAT; regla con `127.0.0.1` y mismo puerto que `ssh -p`. |
 | `Permission denied` | Comprueba usuario y puerto; para la clave, revisa que seleccionaste el fichero privado correcto y que se instaló la clave pública. No cambies permisos ni borres `authorized_keys` a ciegas. Usa la consola de VirtualBox como rescate y consulta. |
-| Puerto anfitrión ya usado | Anota el error; usa otro puerto libre con el profesor y cámbialo **tanto** en VirtualBox como en `ssh -p`. |
+| Puerto anfitrión ya usado | Detente y consulta al profesor. No elijas otro número: F1 y F0.4 usan el puerto fijo 2222. |
 | Aviso de huella cambiada | No borres `known_hosts` a ciegas; revisa si restauraste o reinstalaste `ShellLab_Cole` y consulta. |
 
 ## Cómo se puntúa y qué compruebas
@@ -275,7 +275,7 @@
 | Respuestas 1–5 de esta práctica en la nota: un punto por respuesta correcta y explicada | 5 |
 
 > [!question] F0.4 · Responde las cinco preguntas bajo «F0.4 · SSH y punto de control» de tu nota
-> Usa los números «F0.4.1» a «F0.4.5» de la plantilla y contesta con tus palabras. Si cambiaste el puerto `2222`, usa en la respuesta el puerto que anotaste de verdad.
+> Usa los números «F0.4.1» a «F0.4.5» de la plantilla y contesta con tus palabras. Usa el puerto fijo `2222` de este contexto.
 >
 > 1. **F0.4.1.** ¿Dónde se ejecuta `ssh -V` antes de conectar? Después de entrar por SSH, ¿dónde se ejecutan `whoami` y `pwd`, aunque uses la misma ventana de Git Bash?
 > 2. **F0.4.2.** En `ssh -p 2222 marko@127.0.0.1`, ¿qué significan `marko`, `127.0.0.1` y `2222`? ¿Qué puerto recibe la conexión dentro de Ubuntu?

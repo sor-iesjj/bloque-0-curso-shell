@@ -19,7 +19,7 @@ Este curso te enseña esos comandos **antes** de que los necesites, para que cua
 
 ## **2 · 🛑 EMPIEZA POR LA FASE 0**
 
-Elige un contexto y conserva sus propios apuntes, repositorio, VM y playlist durante el curso. **Casa empieza desde cero**; no presupone que hayas trabajado en Cole.
+Debes completar las dos ediciones: Cole y Casa. Selecciona el contexto que vas a trabajar ahora y conserva sus propios apuntes, repositorio, VM y playlist durante el curso. **Casa empieza desde cero**; no presupone que hayas trabajado en Cole.
 
 | Contexto | Recorrido completo |
 | :--- | :--- |
@@ -43,7 +43,7 @@ Las guías antiguas `01_ANTES_DE_EMPEZAR.md` y `02_ENTREGABLES.md` describen el 
 Las fases 2–7 conservan material docente previo, pero sus rutas y entregas todavía no están adaptadas a estos espacios independientes. No las ejecutes ni uses los enlaces antiguos como continuación del curso actual.
 
 > [!tip] Recorrido
-> Elige Cole o Casa y sigue el índice de esa fase en orden. Casa comienza desde cero y no depende de que hayas hecho Cole.
+> Completa Cole y repite el recorrido en Casa. En cada sesión, abre el índice del contexto correspondiente y sigue la fase en orden. Casa comienza desde cero y no depende de que hayas hecho Cole.
 ---
 
 ## **4 · CÓMO SE SIGUE UNA GUÍA**

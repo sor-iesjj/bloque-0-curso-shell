@@ -1,5 +1,7 @@
 # Fase 0 · Prepara el laboratorio Shell
 
+> [!important] Debes realizar ambas ediciones: Cole y Casa. Selecciona aquí el contexto de esta sesión; cada edición se completa en su propio laboratorio y proyecto.
+
 > **Módulo:** SOR · Esta es la fuente docente. Las ejecuciones del alumno se hacen en espacios externos y separados: `SOR_Shell_Cole/Boveda_Shell_Cole` o `SOR_Shell_Casa/Boveda_Shell_Casa`.
 
 ## Elige un recorrido

@@ -29,7 +29,7 @@ Y existe por una razón muy concreta.
 
 ## El escenario y los personajes
 
-Son los mismos personajes del curso de Git que guardas en `SOR/Boveda_Marko/B0_Curso_Git/`:
+Son los mismos personajes del curso de Git. Los proyectos del alumno se mantienen en sus espacios independientes de Cole y Casa, fuera del árbol real `SOR`:
 
 - **Marko** — 19 años, recién titulado en SMR. Técnico junior en **Boochan Networks S.L.** Ya documenta con Git; ahora le toca aprender la terminal, porque en un servidor no hay ratón.
 - **Boochan Networks S.L.** — PYME ficticia de 12 empleados que da soporte de infraestructura. Tiene un servidor con Active Directory, VPN y almacenamiento por departamentos.
@@ -42,7 +42,7 @@ Son los mismos personajes del curso de Git que guardas en `SOR/Boveda_Marko/B0_C
 
 ## Recorridos actuales y entorno
 
-Todo el recorrido disponible se realiza en una VM con Ubuntu Server y SSH. Fase 0 prepara el entorno; Fase 1 enseña terminal y ficheros. Cada guía de Casa es autónoma y no presupone que se haya hecho Cole.
+Debes completar el recorrido en Cole y repetirlo completo en Casa, con proyectos independientes. Todo el recorrido disponible se realiza en una VM con Ubuntu Server y SSH. Fase 0 prepara el entorno; Fase 1 enseña terminal y ficheros. Cada guía de Casa es autónoma y no presupone que se haya hecho Cole.
 
 - [Fase 0 · Cole](fase-0-preparar-laboratorio/Cole/README.md) → [Fase 1 · Cole](fase-1-terminal-y-ficheros/Cole/README.md)
 - [Fase 0 · Casa](fase-0-preparar-laboratorio/Casa/README.md) → [Fase 1 · Casa](fase-1-terminal-y-ficheros/Casa/README.md)
